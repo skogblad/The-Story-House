@@ -17,9 +17,11 @@ app.use(cors({
 
 //Routes
 import usersRouter from './routes/usersRouter';
+import reviewRouter from "./routes/reviewRouter";
 //import authRouter from './routes/auth';
 //import { verifyAccessToken } from './middleware/verifyToken';
 app.use('/users', usersRouter);
+app.use("/reviews", reviewRouter);
 //app.use('/auth', authRouter);
 
 //import { verifyAccessToken } from './middleware/verifyToken';
