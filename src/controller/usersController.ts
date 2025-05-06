@@ -1,6 +1,4 @@
 import { Request, Response } from 'express';
-//import { User } from '../modules/users';
-//import { db } from '../config/db';
 import Users from '../modules/Users';
 
 
