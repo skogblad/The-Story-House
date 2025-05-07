@@ -15,13 +15,14 @@ router.get('/', fetchAllUsers);
 router.get('/:id', fetchUser);
 
 //Need verfiAccessToken 
-router.post('/',verifyAccessToken, createUser);
+router.post('/', verifyAccessToken, createUser);
 router.patch('/:id',verifyAccessToken, updateUser);
 router.delete('/:id',verifyAccessToken, deleteUser);
 
 //Need Verify Access  
 router.post('/login', login);
 router.post('/logout', logout);
-router.post('/register', register, createUser);
+router.post('/register', register)
+
 
 export default router;

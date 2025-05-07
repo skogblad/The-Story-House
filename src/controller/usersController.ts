@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import Users from '../modules/Users';
+import jwt from 'jsonwebtoken';
 
 
 // Sort function
@@ -45,6 +46,7 @@ export const fetchUser = async (req: Request, res: Response) => {
   res.status(500).json({ error: 'Failed to retrieve user' });
 }
 };
+
 
 //Post new user
 export const createUser = async (req: Request, res: Response) => {
