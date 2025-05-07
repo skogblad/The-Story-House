@@ -18,6 +18,6 @@ Under dagen fortsätter alla att arbeta med sina egna ansvarsområden, medan vi 
 
 - Alicia: Färdigställt tabell i MongoDB Compass och CRUD för reviews. Skapat Token som sedan behövs tillsammans med login/logout -delen.
 - Elin:
-- Sarah:
+- Sarah: Färdigställt tabellen User med tillhörande endpoints. Håller på med auth för register och login logout för users. Ska ta hjälp av handledning. 
 
 ---
