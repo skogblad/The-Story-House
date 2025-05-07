@@ -1,4 +1,4 @@
-import { request, Request, Response } from "express";
+import { json, request, Request, Response } from "express";
 import Books from "../modules/Book";
 import Book from "../modules/Book";
 
@@ -49,6 +49,42 @@ export const addBook = async (req: Request, res: Response) => {
         const savedBook = await book.save();
         res.status(201).json({message: 'Book added.', data: savedBook})
 
+    } catch (error: unknown) {
+        const message = error  instanceof Error ? error.message : 'Unknown error'
+        res.status(500).json({error: message})
+    }
+}
+
+// Update book
+export const updateBook = async (req: Request, res: Response) => {
+    const {
+        title, 
+        description, 
+        author, 
+        genres,
+        image,
+        published_year
+        } = req.body;
+
+    try {
+        const updatedBook = await Books.updateOne(
+            {_id: req.params.id},
+            {$set: {
+                title: title,
+                description: description,
+                author: author,
+                genres: genres,
+                image: image,
+                published_year: published_year
+                }  
+            }
+        );
+
+        if(updatedBook.matchedCount === 0){
+            res.status(404).json({success: false, message: 'Book not found.'});
+        }
+        res.json({message: 'Book updated.', data: await Books.findById(req.params.id)});
+     
     } catch (error: unknown) {
         const message = error  instanceof Error ? error.message : 'Unknown error'
         res.status(500).json({error: message})
