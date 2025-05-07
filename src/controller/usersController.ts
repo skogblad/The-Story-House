@@ -13,49 +13,38 @@ export const fetchAllUsers = async (req: Request, res: Response) => {
 
     const sortOrder = sort === 'desc' ? -1 : 1;
 
-    const users = await Users.find(query).sort({ username: sortOrder });
+    const users = await Users.find(query).sort({username: sortOrder })
+    .select('+username');
     res.json(users);
   } catch (error: any) {
     res.status(500).json({ error: error.message });
   }
 };
 
-/*
+
 //Fetch user by id
 export const fetchUser = async (req: Request, res: Response) => {
-  const id = req.params.id
+ const id = req.params.id;
   try {
-  const sql = `
-    SELECT
-    user.id AS user_id,
-    user.username AS user_name,
-    user.is_admin AS user_is_admin,
-    user.created_at AS user_created_at
-    
-    FROM users
-    WHERE user_id = ?
-    `
+ const user = await Users.findById(id);
 
-    const [rows] = await db.query<RowDataPacket[]>(sql, [id]);
-    //res.json(rows[0]);
-    res.json(formatUser(rows));
-  } catch (error) {
-    console.error('Error fetching users:', error);
-    res.status(500).json({ error: 'Failed to retrieve users' });
-  }
+ if (!user) {
+  return res.status(404).json({ error: 'User not found' });
+ }
+
+ const formattedUser = {
+  user_id: user._id,
+  user_name: user.username,
+  user_is_admin: user.is_admin,
+  user_created_at: user.created_at,
 };
 
-const formatUser = (rows: any) =>  {
-  const formatedUser = {
-    id:           rows[0].user_id, 
-    content:      rows[0].user_name, 
-    done:         rows[0].user_password, 
-    created_at:   rows[0].user_created_at 
-    
-  };
-  return formatedUser; 
+ res.json(formattedUser);
+} catch (error) {
+  console.error('Error fetching user:', error);
+  res.status(500).json({ error: 'Failed to retrieve user' });
+}
 };
-
 
 //Post new user
 export const createUser = async (req: Request, res: Response) => {
@@ -66,92 +55,69 @@ export const createUser = async (req: Request, res: Response) => {
   }
 
   try {
-    const sql = `
-    INSERT INTO users (username, password)
-    VALUES (?, ?)
-  `;
-    const [result] = await db.query<ResultSetHeader>(sql, [
-      username,
-      password
-    ]);
+   const newUser = await Users.create({ username, password });
+
     res.status(201).json({
       message: 'User created',
-      id: result.insertId,
-      username,
-      password
+      username: newUser.username,
+      password: newUser.password, // note: only include this in testing
     });
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : 'Unknown error';
     res.status(500).json({ error: message });
   }
 };
+
 
 //Update Patch User
 export const updateUser = async (req: Request, res: Response) => {
   const { id } = req.params; // Get the ID from the URL parameters
   const { username, password } = req.body;
+  
   if (!username || !password ) {
     res.status(400).json({ error: 'Username and password are required' });
     return;
   }
   try {
-    // Build dynamic SET clause based on provided fields
-    const updates = [];
-    const values = [];
+    // Create an object to hold the fields to be updated
+    const updates: { [key: string]: any } = {};
 
-    if (username) {
-      updates.push('username = ?');
-      values.push(username);
-    }
+    if (username) updates.username = username;
+    if (password) updates.password = password;
 
-    if (password) {
-      updates.push('password = ?');
-      values.push(password);
-    }
+ // Find the user by ID and update the fields
+ const user = await Users.findByIdAndUpdate(
+  id,
+  { $set: updates },
+  { new: true }
+ );
+   
+ if (!user) {
+  return res.status(404).json({ error: 'User not found' });
+}
 
-    // Add the ID to the values array
-    values.push(id);
-
-    const sql = `
-    UPDATE users
-    SET ${updates.join(', ')}
-    WHERE id = ?
-    `;
-
-    const [result] = await db.query<ResultSetHeader>(sql, values);
-    res.status(200).json({
-      message: 'User updated',
-      id: parseInt(id),
-      updatedFields: {
-        ...(username && { username }),
-        ...(password && { password }),
-      },
-    });
-  } catch (error: unknown) {
+res.status(200).json({ meassage: 'User updated', updatedFields: updates });
+  }catch (error: unknown) {
     const message = error instanceof Error ? error.message : 'Unknown error';
     res.status(500).json({ error: message });
   }
 };
+
 
 // Delete user
 export const deleteUser = async (req: Request, res: Response) => {
   const id = req.params.id;
 
   try {
-    const sql = `
-      DELETE FROM users
-      WHERE id = ?
-    `;
-    const [result] = await db.query<ResultSetHeader>(sql, [id]);
-    if (result.affectedRows === 0) {
-      res.status(404).json({ message: 'User not found' });
-      return;
-    }
+    const deleteUser = await Users.findByIdAndDelete(id);
+
+   if (!deleteUser) {
+    return res.status(404).json({ message: 'User not found' });
+   }
     res.json({ message: 'User deleted' });
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : 'Unknown error';
-    res.status(500).json({ error: message });
+    res.status(500).json({ error: 'Failed to delete user' });
   }
 };
 
-*/

@@ -1,8 +1,6 @@
 import 'dotenv/config'
 import express from 'express';
 import cors from 'cors'
-import { connectToDatabase } from './config/db';
-//import cookieParser from 'cookie-parser';
 import mongoose from 'mongoose';
 
 const app = express();

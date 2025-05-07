@@ -1,24 +1,29 @@
 import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
-const BooksSchema = new Schema({
+const UsersSchema = new Schema(
+  {
     username: {
-        type: String,
-        required: true
+      type: String,
+      required: true
     },
     password: {
       type: String,
       required: true
     },
     is_admin: {
-        type: Boolean,
-        default: false
-    }, 
+      type: Boolean,
+      default: false
+    },
     created_at: {
       type: Date,
       default: Date.now
     }
-  });
+  },
+  {
+    versionKey: false // This disables the __v field
+  }
+);
 
-  export default mongoose.model('Book', BooksSchema);
+export default mongoose.model('User', UsersSchema);
 
