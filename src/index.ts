@@ -1,7 +1,6 @@
 import 'dotenv/config'
 import express from 'express';
 import cors from 'cors'
-import { connectToDatabase } from './config/db';
 //import cookieParser from 'cookie-parser';
 import mongoose from 'mongoose';
 
@@ -19,7 +18,6 @@ app.use(cors({
 import usersRouter from './routes/usersRouter';
 import reviewRouter from "./routes/reviewRouter";
 //import authRouter from './routes/auth';
-//import { verifyAccessToken } from './middleware/verifyToken';
 app.use('/users', usersRouter);
 app.use("/reviews", reviewRouter);
 //app.use('/auth', authRouter);
@@ -28,7 +26,6 @@ app.use("/reviews", reviewRouter);
 import booksRouter from './routes/booksRouter';
 app.use('/books', booksRouter);
 
-//import { verifyAccessToken } from './middleware/verifyToken';
 
 //connect to Mongoose db
 mongoose.connect(process.env.MONGODB_URL || "");
