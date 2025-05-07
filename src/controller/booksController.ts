@@ -21,3 +21,14 @@ export const fetchBook = async (req: Request, res: Response) => {
         res.status(500).json({error: message})
     }
 }
+
+// Add book
+export const addBook = async (req: Request, res: Response) => {
+    try {
+        res.json(await Books.insertOne(Books));
+
+    } catch (error: unknown){
+        const message = error  instanceof Error ? error.message : 'Unknown error'
+        res.status(500).json({error: message})
+    }
+}
