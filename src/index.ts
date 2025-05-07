@@ -1,7 +1,7 @@
 import 'dotenv/config'
 import express from 'express';
 import cors from 'cors'
-
+import cookieParser from 'cookie-parser';
 import mongoose from 'mongoose';
 
 const app = express();
@@ -19,6 +19,7 @@ import usersRouter from './routes/usersRouter';
 import reviewRouter from './routes/reviewRouter';
 import authRouter from './routes/auth';
 import { verifyAccessToken } from './middleware/verifyToken';
+app.use(cookieParser()); // This specific middleware parses Cookies
 app.use('/users', verifyAccessToken, usersRouter);
 app.use('/reviews', reviewRouter);
 app.use('/auth', authRouter);
