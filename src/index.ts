@@ -22,6 +22,10 @@ app.use('/users', usersRouter);
 app.use("/reviews", reviewRouter);
 //app.use('/auth', authRouter);
 
+// Books router
+import booksRouter from './routes/booksRouter';
+app.use('/books', booksRouter);
+
 
 //connect to Mongoose db
 mongoose.connect(process.env.MONGODB_URL || "");
