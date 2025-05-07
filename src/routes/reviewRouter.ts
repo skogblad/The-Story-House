@@ -1,14 +1,14 @@
 import express from "express";
-import { fetchAllReviews } from "../controller/reviewController";
+import { createReview, deleteReview, fetchAllReviews, fetchReview, updateReview } from "../controller/reviewController";
 
 const router = express.Router()
 
 router.get("/", fetchAllReviews)
-router.get("/:id")
+router.get("/:id", fetchReview)
 
-// The 3 endpoints bleow are protected
-router.post("/")
-router.patch("/:id")
-router.delete("/:id")
+// The 3 endpoints below are protected
+router.post("/", createReview)
+router.patch("/:id", updateReview)
+router.delete("/:id", deleteReview)
 
 export default router;
