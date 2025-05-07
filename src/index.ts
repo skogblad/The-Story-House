@@ -22,6 +22,10 @@ import usersRouter from './routes/usersRouter';
 app.use('/users', usersRouter);
 //app.use('/auth', authRouter);
 
+// Books router
+import booksRouter from './routes/booksRouter';
+app.use('/books', booksRouter);
+
 //import { verifyAccessToken } from './middleware/verifyToken';
 
 //connect to Mongoose db
