@@ -1,11 +1,11 @@
 import express from "express";
-import { fetchAllBooks } from "../controller/booksController";
+import { fetchAllBooks, fetchBook } from "../controller/booksController";
 
 const booksRouter = express.Router();
 
 booksRouter.get('/', fetchAllBooks)
-/*router.get('/:id', fetchBook)
-router.post('/', insertBook)
+booksRouter.get('/:id', fetchBook)
+/*router.post('/', insertBook)
 router.patch('/:id', updateBook)
 router.delete('/:id', deleteBook )*/
 
