@@ -40,7 +40,7 @@ export const fetchUser = async (req: Request, res: Response) => {
 };
 
  res.json(formattedUser);
-} catch (error) {
+} catch (error: any) {
   console.error('Error fetching user:', error);
   res.status(500).json({ error: 'Failed to retrieve user' });
 }
