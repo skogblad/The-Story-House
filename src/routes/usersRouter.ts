@@ -1,15 +1,19 @@
 import express from 'express';
 import { verifyAccessToken } from '../middleware/verifyToken';
 import { login, logout, register } from '../controller/authController'
-import {
-  createUser,
-  deleteUser,
-  fetchUser,
+import { 
+  createUser, 
+  deleteUser, 
+  fetchUser, 
   updateUser,
-  fetchAllUsers,
-} from '../controller/usersController';
+  fetchAllUsers  } from '../controller/usersController';
+const router = express.Router()
 
-const router = express.Router();
+router.get('/', fetchAllUsers)
+router.get('/:id', fetchUser)
+router.post('/', createUser)
+router.patch('/:id', updateUser)
+router.delete('/:id', deleteUser)
 
 router.get('/', fetchAllUsers);
 router.get('/:id', fetchUser);
