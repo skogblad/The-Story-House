@@ -12,10 +12,17 @@ export const fetchAllBooks = async (_: Request, res: Response) => {
     }
 };
 
-// Fetch book by id (NOT DONE! Fetch rewviews aswell)
+// Fetch book by id (NOT DONE! Fetch reviews aswell)
 export const fetchBook = async (req: Request, res: Response) => {
     try {
-        res.json(await Books.findById({_id: req.params.id}));
+        const book = await Books.findOne({_id: req.params.id});
+
+        if(!book){
+            res.status(404).json({success: false, message: 'Book not found.'});
+            return;
+        }
+
+        res.json(book);
 
     } catch (error: unknown) {
         const message = error  instanceof Error ? error.message : 'Unknown error'
@@ -32,11 +39,9 @@ export const addBook = async (req: Request, res: Response) => {
         genres,
         image,
         published_year
-        //reviews
         } = req.body
 
     try {
-
         const book = new Book({
             title: title,
             description: description,
@@ -44,8 +49,8 @@ export const addBook = async (req: Request, res: Response) => {
             genres: genres,
             image: image,
             published_year: published_year
-            //reviews: reviews
         });
+
         const savedBook = await book.save();
         res.status(201).json({message: 'Book added.', data: savedBook})
 
