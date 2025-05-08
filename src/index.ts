@@ -17,6 +17,7 @@ app.use(cors({
 //Routes
 import usersRouter from './routes/usersRouter';
 import reviewRouter from "./routes/reviewRouter";
+import booksRouter from './routes/booksRouter';
 //import authRouter from './routes/auth';
 //import { verifyAccessToken } from './middleware/verifyToken';
 app.use('/users', usersRouter);
