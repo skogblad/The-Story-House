@@ -1,6 +1,6 @@
 export interface IUsers {
-    username: String,
-    password: String,
-    is_admin: Boolean,
-    created_at: Date;
-}
+    username: string;
+    password: string;
+    is_admin?: boolean;
+    created_at?: Date;
+  }
