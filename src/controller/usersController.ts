@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import Users from '../modules/Users';
-import jwt from 'jsonwebtoken';
+
 
 
 // Sort function
@@ -15,38 +15,37 @@ export const fetchAllUsers = async (req: Request, res: Response) => {
     const sortOrder = sort === 'desc' ? -1 : 1;
 
     const users = await Users.find(query).sort({username: sortOrder })
-    .select('+username');
+      .select('+username');
     res.json(users);
   } catch (error: any) {
     res.status(500).json({ error: error.message });
   }
 };
 
-
 //Fetch user by id
 export const fetchUser = async (req: Request, res: Response) => {
- const id = req.params.id;
+  const id = req.params.id;
   try {
- const user = await Users.findById(id);
+    const user = await Users.findById(id);
 
- if (!user) {
-  return res.status(404).json({ error: 'User not found' });
- }
+    if (!user) {
+      res.status(404).json({ error: 'User not found' });
+      return; 
+    }
 
- const formattedUser = {
-  user_id: user._id,
-  user_name: user.username,
-  user_is_admin: user.is_admin,
-  user_created_at: user.created_at,
+    const formattedUser = {
+      user_id: user._id,
+      user_name: user.username,
+      user_is_admin: user.is_admin,
+      user_created_at: user.created_at,
+    };
+
+    res.json(formattedUser);
+  } catch (error: any) {
+    console.error('Error fetching user:', error);
+    res.status(500).json({ error: 'Failed to retrieve user' });
+  }
 };
-
- res.json(formattedUser);
-} catch (error: any) {
-  console.error('Error fetching user:', error);
-  res.status(500).json({ error: 'Failed to retrieve user' });
-}
-};
-
 
 //Post new user
 export const createUser = async (req: Request, res: Response) => {
@@ -57,7 +56,7 @@ export const createUser = async (req: Request, res: Response) => {
   }
 
   try {
-   const newUser = await Users.create({ username, password });
+    const newUser = await Users.create({ username, password });
 
     res.status(201).json({
       message: 'User created',
@@ -70,10 +69,9 @@ export const createUser = async (req: Request, res: Response) => {
   }
 };
 
-
 //Update Patch User
 export const updateUser = async (req: Request, res: Response) => {
-  const { id } = req.params; // Get the ID from the URL parameters
+  const { id } = req.params;
   const { username, password } = req.body;
   
   if (!username || !password ) {
@@ -87,24 +85,24 @@ export const updateUser = async (req: Request, res: Response) => {
     if (username) updates.username = username;
     if (password) updates.password = password;
 
- // Find the user by ID and update the fields
- const user = await Users.findByIdAndUpdate(
-  id,
-  { $set: updates },
-  { new: true }
- );
-   
- if (!user) {
-  return res.status(404).json({ error: 'User not found' });
-}
+    // Find the user by ID and update the fields
+    const user = await Users.findByIdAndUpdate(
+      id,
+      { $set: updates },
+      { new: true }
+    );
+     
+    if (!user) {
+      res.status(404).json({ error: 'User not found' });
+      return; 
+    }
 
-res.status(200).json({ meassage: 'User updated', updatedFields: updates });
-  }catch (error: unknown) {
+    res.status(200).json({ message: 'User updated', updatedFields: updates });
+  } catch (error: unknown) {
     const message = error instanceof Error ? error.message : 'Unknown error';
     res.status(500).json({ error: message });
   }
 };
-
 
 // Delete user
 export const deleteUser = async (req: Request, res: Response) => {
@@ -113,9 +111,10 @@ export const deleteUser = async (req: Request, res: Response) => {
   try {
     const deleteUser = await Users.findByIdAndDelete(id);
 
-   if (!deleteUser) {
-    return res.status(404).json({ message: 'User not found' });
-   }
+    if (!deleteUser) {
+      res.status(404).json({ message: 'User not found' });
+      return; 
+    }
     res.json({ message: 'User deleted' });
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : 'Unknown error';
