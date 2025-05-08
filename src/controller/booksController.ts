@@ -90,3 +90,24 @@ export const updateBook = async (req: Request, res: Response) => {
         res.status(500).json({error: message})
     }
 }
+
+// Delete book
+export const deleteBook = async (req: Request, res: Response) => {
+
+    try {
+        const deletedBook = await Books.deleteOne(
+            { _id: req.params.id}
+        );
+
+        if(deletedBook.deletedCount === 0){
+            res.status(404).json({success: false, message: 'Book was not found.'});
+            return;
+        }
+
+        res.json({message: 'Book is deleted.'});
+
+    } catch (error: unknown) {
+        const message = error  instanceof Error ? error.message : 'Unknown error'
+        res.status(500).json({error: message})
+    }
+} 
