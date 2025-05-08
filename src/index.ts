@@ -1,7 +1,7 @@
 import 'dotenv/config'
 import express from 'express';
 import cors from 'cors'
-import cookieParser from 'cookie-parser';
+
 import mongoose from 'mongoose';
 
 const app = express();
@@ -16,17 +16,14 @@ app.use(cors({
 
 //Routes
 import usersRouter from './routes/usersRouter';
-import reviewRouter from './routes/reviewRouter';
-import authRouter from './routes/auth';
-app.use(cookieParser()); // This specific middleware parses Cookies
-app.use('/users', usersRouter);
-app.use('/reviews', reviewRouter);
-app.use('/auth', authRouter);
-
-// Books router
+import reviewRouter from "./routes/reviewRouter";
 import booksRouter from './routes/booksRouter';
+//import authRouter from './routes/auth';
+//import { verifyAccessToken } from './middleware/verifyToken';
+app.use('/users', usersRouter);
+app.use("/reviews", reviewRouter);
 app.use('/books', booksRouter);
-
+//app.use('/auth', authRouter);
 
 //connect to Mongoose db
 mongoose.connect(process.env.MONGODB_URL || "");

@@ -11,10 +11,7 @@ const BookSchema = new Schema({
     type: String,
     required: true
   },
-  genres: {
-    type: Array,
-    required: true
-  },
+  genres: Array,
   image: String,
   published_year: Number,
   reviews:[{

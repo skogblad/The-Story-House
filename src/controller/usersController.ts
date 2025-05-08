@@ -2,7 +2,6 @@ import { Request, Response } from 'express';
 import Users from '../modules/Users';
 
 
-
 // Sort function
 export const fetchAllUsers = async (req: Request, res: Response) => {
   const search = req.query.search as string;

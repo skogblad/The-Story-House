@@ -17,7 +17,7 @@ Första dagen och vi börjar med att starta projektet och tillsammans installera
 Under dagen fortsätter alla att arbeta med sina egna ansvarsområden, medan vi håller kontakten via teams-chatten.
 
 - Alicia: Färdigställt tabell i MongoDB Compass och CRUD för reviews. Skapat Token som sedan behövs tillsammans med login/logout -delen.
-- Elin:
+- Elin: Tabellen i MongoDB är färdig. Håller på att jobba med CRUDS för 'books'. Skapat schema 'Book'.
 - Sarah: Färdigställt tabellen User med tillhörande endpoints. Håller på med auth för register och login logout för users. Ska ta hjälp av handledning. 
 
 ---
