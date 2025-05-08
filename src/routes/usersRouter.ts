@@ -22,7 +22,7 @@ router.delete('/:id',verifyAccessToken, deleteUser);
 //Need Verify Access  
 router.post('/login', login);
 router.post('/logout', logout);
-router.post('/register', register)
+router.post('/:id', register)
 
 
 export default router;
