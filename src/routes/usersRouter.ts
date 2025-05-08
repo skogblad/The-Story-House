@@ -1,4 +1,6 @@
 import express from 'express';
+import { verifyAccessToken } from '../middleware/verifyToken';
+import { login, logout, register } from '../controller/authController'
 import { 
   createUser, 
   deleteUser, 
