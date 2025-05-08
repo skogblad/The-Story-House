@@ -1,39 +1,52 @@
 import jwt from 'jsonwebtoken'
 import { Request, Response } from 'express';
+import Users from '../modules/Users';
 
 // Log in
 export const login = async (req: Request, res: Response) => {
-    const {username, password} = req.body;
-    if (username === undefined || password === undefined) {
-      res.status(400).json({message: "Username and password are required"})
-    }
-  
-    if (username === "admin" && password === "123") {
-      const accessToken = jwt.sign({username}, process.env.JWT_SECRET || "", {expiresIn: "7d"});
-  
-      res.cookie('accessToken', accessToken, {
-        httpOnly: true,
-        secure: false,
-        sameSite: 'none',
-        maxAge: 1000 * 60 * 60 * 24 * 7 // Expires in 7 days
-      })
-      res.json({message: 'You are logged in'});
-    } else {
-      res.status(401).json({message: "Username or password are wrong"})
-    }
+  const { username, password } = req.body;
+
+  if (!username || !password) {
+     res.status(400).json({ message: "Username and password are required" });
+     return
   }
 
+  try {
+    const user = await Users.findOne({ username });
 
-  // Log out
+    if (!user) {
+       res.status(401).json({ message: "Invalid username or password" });
+       return
+    }
+
+    const accessToken = jwt.sign({ userId: user._id, username: user.username }, process.env.JWT_SECRET || "", {
+      expiresIn: '7d'
+    });
+
+    res.cookie('accessToken', accessToken, {
+      httpOnly: true,
+      secure: true, 
+      sameSite: 'none', 
+      maxAge: 1000 * 60 * 60 * 24 * 7
+    });
+
+    res.json({ message: 'You are logged in' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
+// Log out
   export const logout = (req: Request, res: Response) => {
     res.clearCookie('accessToken')
     res.json({message: 'Token cleared'})
   }
 
-  // Register
+// Register
 const users: { username: string; password: string }[] = [];
 
-export const register = (req: Request, res: Response) => {
+export const register = async (req: Request, res: Response) => {
   const { username, password } = req.body;
 
   if (!username || !password) {
@@ -49,17 +62,16 @@ export const register = (req: Request, res: Response) => {
   }
 
   // Add user
-  users.push({ username, password });
+  try {
+    const newUser = await Users.create({ username, password });
 
-  // Create accesstoken
-  const accessToken = jwt.sign({ username }, process.env.JWT_SECRET || '', { expiresIn: '7d' });
-
-  res.cookie('accessToken', accessToken, {
-    httpOnly: true,
-    secure: false,
-    sameSite: 'none',
-    maxAge: 1000 * 60 * 60 * 24 * 7,
-  });
-
-  res.status(201).json({ message: 'User registered successfully' });
+    res.status(201).json({
+      message: 'User created',
+      username: newUser.username,
+      password: newUser.password, // note: only include this in testing 
+    });
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : 'Unknown error';
+    res.status(500).json({ error: message });
+  }
 };

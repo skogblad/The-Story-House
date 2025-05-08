@@ -61,7 +61,7 @@ export const createUser = async (req: Request, res: Response) => {
     res.status(201).json({
       message: 'User created',
       username: newUser.username,
-      password: newUser.password, // note: only include this in testing
+      password: newUser.password, // note: only include this in testing 
     });
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : 'Unknown error';
