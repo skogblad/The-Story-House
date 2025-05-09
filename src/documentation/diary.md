@@ -21,3 +21,12 @@ Under dagen fortsätter alla att arbeta med sina egna ansvarsområden, medan vi 
 - Sarah: Färdigställt tabellen User med tillhörande endpoints. Håller på med auth för register och login logout för users. Ska ta hjälp av handledning. 
 
 ---
+###  Torsdag 8/5
+
+- Alicia:
+- Elin:
+- Sarah: Färdigställt all API för users samt log in/out och register funktionen. 
+
+### Fredag 9/5
+
+Vi börjar med att skapa prototyper i Figma.
