@@ -29,4 +29,4 @@ Under dagen fortsätter alla att arbeta med sina egna ansvarsområden, medan vi 
 
 ### Fredag 9/5
 
-Vi börjar med att skapa prototyper i Figma.
+Vi börjar med att skapa prototyper i Figma och färdigställer under dagen, samt kollar igenom Vue materialet. 
