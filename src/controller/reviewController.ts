@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import Review from "../modules/Review";
+import Book from "../modules/Book";
 
 export const fetchAllReviews = async (req: Request, res: Response) => {
     try {
@@ -46,7 +47,8 @@ export const createReview = async (req: Request, res: Response) => {
 
         const newReview = await review.save();
 
-        await Review.findByIdAndUpdate(books_id, {$push: {review: newReview.id}});
+        await Book.findByIdAndUpdate(books_id, {$push: {reviews: newReview.id}});
+        //await Review.findByIdAndUpdate(books_id, {$push: {review: newReview.id}}); 
 
         res.status(201).json({message: "Review created!", data: newReview});
 
