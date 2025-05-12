@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
+import Review from "../modules/Review";
 import Books from "../modules/Book";
 import Book from "../modules/Book";
+
 
 // Fetch all books
 export const fetchAllBooks = async (_: Request, res: Response) => {
@@ -12,10 +14,10 @@ export const fetchAllBooks = async (_: Request, res: Response) => {
     }
 };
 
-// Fetch book by id (NOT DONE! Fetch reviews aswell)
+// Fetch book and reviews
 export const fetchBook = async (req: Request, res: Response) => {
     try {
-        const book = await Books.findOne({_id: req.params.id});
+        const book = await Books.findById(req.params.id).populate('reviews');    
 
         if(!book){
             res.status(404).json({success: false, message: 'Book not found.'});
