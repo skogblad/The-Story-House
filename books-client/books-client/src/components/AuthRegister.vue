@@ -25,13 +25,7 @@ const login = async (): Promise<void> => {
 
 <template>
  <div>
-    <h1>The Story House</h1>
-  <form @submit.prevent="login">
-    <h2>Sign up for The Story House</h2>
-    <input v-model="username" placeholder="Username" />
-<input v-model="password" type="password" placeholder="Password" />
-  </form>
-  <p v-if="error">{{ error }}</p>
+ Hello
  </div>
 </template>
 
