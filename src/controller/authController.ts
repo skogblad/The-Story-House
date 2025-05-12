@@ -11,6 +11,26 @@ export const login = async (req: Request, res: Response) => {
      return
   }
 
+   // Check for admin
+  if (username === "admin" && password === "123") {
+    const accessToken = jwt.sign(
+      { username, isAdmin: true },
+      process.env.JWT_SECRET || "",
+      { expiresIn: "7d" }
+    );
+
+    res.cookie('accessToken', accessToken, {
+      httpOnly: true,
+      secure: true,  // true in production
+      sameSite: 'none',
+      maxAge: 1000 * 60 * 60 * 24 * 7,
+    });
+
+    res.json({ message: 'You are logged in as admin' });
+    return; 
+  }
+
+  // Check in database for regular user
   try {
     const user = await Users.findOne({ username });
 
