@@ -36,5 +36,5 @@ Vi börjar med att skapa prototyper i Figma och färdigställer det under dagen,
 Vi har isntallerat Vue och påbörjat hemisdan för klienten.
 
 Sarah - Skapat sidor för respektive post signin/login/register/admin i vue ska påbörja css imorgon. 
-Elin -
+Elin - Installerat Vue med gruppen, skapat Interface IBook, fixat endpoint för att hämta bok med alla reviews, lagt till endpoints på vissa tokens.
 Alicia -
