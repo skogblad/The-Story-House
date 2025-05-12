@@ -30,3 +30,11 @@ Under dagen fortsätter alla att arbeta med sina egna ansvarsområden, medan vi 
 ### Fredag 9/5
 
 Vi börjar med att skapa prototyper i Figma och färdigställer det under dagen, samt kollar igenom Vue materialet. 
+
+### Måndag 12/5
+
+Vi har isntallerat Vue och påbörjat hemisdan för klienten.
+
+Sarah - Skapat sidor för respektive post signin/login/register/admin i vue ska påbörja css imorgon. 
+Elin -
+Alicia -
