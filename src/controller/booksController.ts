@@ -14,7 +14,7 @@ export const fetchAllBooks = async (_: Request, res: Response) => {
     }
 };
 
-// Fetch book and reviews
+// Fetch book and reviews 
 export const fetchBook = async (req: Request, res: Response) => {
     try {
         const book = await Books.findById(req.params.id).populate('reviews');    

@@ -48,7 +48,7 @@ export const createReview = async (req: Request, res: Response) => {
         const newReview = await review.save();
 
         await Book.findByIdAndUpdate(books_id, {$push: {reviews: newReview.id}});
-        //await Review.findByIdAndUpdate(books_id, {$push: {review: newReview.id}});
+        //await Review.findByIdAndUpdate(books_id, {$push: {review: newReview.id}}); 
 
         res.status(201).json({message: "Review created!", data: newReview});
 
