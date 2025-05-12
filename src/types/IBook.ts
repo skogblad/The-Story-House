@@ -1,4 +1,4 @@
-export interface IBook{
+export interface IBook {
     title: String,
     description: String,
     genres: String[],
