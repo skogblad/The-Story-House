@@ -29,6 +29,7 @@ registered.value = true
     });
 
     alert('Registration successful!');
+    router.push('/');
   
   } catch (error) {
     console.log('Error:', error);
