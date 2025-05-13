@@ -59,7 +59,8 @@ export const createReview = async (req: Request, res: Response) => {
 }
 
 export const updateReview = async (req: Request, res: Response) => {
-    const { name, content, rating, id } = req.body;
+    const { name, content, rating} = req.body;
+    const id = req.params.id;
 
     try {
         const updatedReview = await Review.updateOne({_id: id}, {$set: { name: name, content: content, rating: rating}});

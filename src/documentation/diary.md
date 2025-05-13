@@ -18,23 +18,38 @@ Under dagen fortsätter alla att arbeta med sina egna ansvarsområden, medan vi 
 
 - Alicia: Färdigställt tabell i MongoDB Compass och CRUD för reviews. Skapat Token som sedan behövs tillsammans med login/logout -delen.
 - Elin: Tabellen i MongoDB är färdig. Håller på att jobba med CRUDS för 'books'. Skapat schema 'Book'.
-- Sarah: Färdigställt tabellen User med tillhörande endpoints. Håller på med auth för register och login logout för users. Ska ta hjälp av handledning. 
+- Sarah: Färdigställt tabellen User med tillhörande endpoints. Håller på med auth för register och login logout för users. Ska ta hjälp av handledning.
 
 ---
-###  Torsdag 8/5
+
+### Torsdag 8/5
 
 - Alicia:
 - Elin:
-- Sarah: Färdigställt all API för users samt log in/out och register funktionen. 
+- Sarah: Färdigställt all API för users samt log in/out och register funktionen.
+
+---
 
 ### Fredag 9/5
 
-Vi börjar med att skapa prototyper i Figma och färdigställer det under dagen, samt kollar igenom Vue materialet. 
+Vi börjar med att skapa prototyper i Figma och färdigställer det under dagen, samt kollar igenom Vue materialet.
+
+---
 
 ### Måndag 12/5
 
-Vi har isntallerat Vue och påbörjat hemisdan för klienten.
+Vi har installerat Vue och påbörjat hemisdan för klienten.
 
-Sarah - Skapat sidor för respektive post signin/login/register/admin i vue ska påbörja css imorgon. 
-Elin - Installerat Vue med gruppen, skapat Interface IBook, fixat endpoint för att hämta bok med alla reviews, lagt till endpoints på vissa tokens.
-Alicia -
+- Sarah: Skapat sidor för respektive post signin/login/register/admin i vue ska påbörja css imorgon.
+- Elin: Installerat Vue med gruppen, skapat Interface IBook, fixat endpoint för att hämta bok med alla reviews, lagt till endpoints på vissa tokens.
+- Alicia: Skapat och påbörjat sidan för att visa enskild bok och dess innehåll. Uppdaterat alla reviews så att de blivit synliga under respektive book.
+
+---
+
+### Tisdag 13/5
+
+- Sarah:
+- Elin:
+- Alicia: Arbetat med samma som igår, lagt till style och ??
+
+---
