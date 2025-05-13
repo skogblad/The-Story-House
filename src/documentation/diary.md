@@ -38,3 +38,9 @@ Vi har isntallerat Vue och påbörjat hemisdan för klienten.
 Sarah - Skapat sidor för respektive post signin/login/register/admin i vue ska påbörja css imorgon. 
 Elin -
 Alicia -
+
+### Tisdag 13/5
+
+Sarah- Färdigställt all logik och funktion för log in, logout och register, fixat klart AdminPanel med css och info. Bara CSS kvar för övriga sidor. 
+Alicia -
+Elin -
