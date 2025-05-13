@@ -1,31 +1,41 @@
 <script lang="ts" setup>
+import { onMounted } from 'vue'
 import { ref } from 'vue';
-import axios from 'axios';
-import { useRouter } from 'vue-router';
 
-const username = ref<string>('')
-const password = ref<string>('')
-const error = ref<string | null>(null)
-const router = useRouter()
+onMounted(() => {
+  submit()
+})
 
-const login = async (): Promise<void> => {
+const API_URL = import.meta.env.VITE_API_URL
+const users = ref([]);
+
+const submit = async () => {
     try {
-        await axios.post('/api/login', {
-        username: username.value,
-        password: password.value,
-    }, {
-        withCredentials: true,
-    })
-    router.push('/admin')
-    }catch (err) {
-        error.value = 'Wrong user or password'
-    }
+        const response = await fetch(API_URL + 'users')
+        const data = await response.json();
+        console.log(data);
+        users.value = data;
+        }catch(error) {
+            console.log(error)
+        }
 }
+
 </script>
 
 <template>
- <div>
- Hello
+    <h1>The Story House</h1>
+    <h2>Sign up for The Story House</h2>
+ <div class="container">
+    <form id="createuser" @submit.prevent="submit">
+        <label for="">Username:</label> <br />
+        <input type="text" name="Username"> <br />
+        <label for="">Password:</label> <br />
+        <input type="text" name="Password"> <br />
+        <button>Register</button>
+    </form>
+       <router-link to="/signin">
+            <button type="submit">Back</button>
+        </router-link>
  </div>
 </template>
 
