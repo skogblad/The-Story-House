@@ -28,9 +28,13 @@ Under dagen fortsätter alla att arbeta med sina egna ansvarsområden, medan vi 
 - Elin:
 - Sarah: Färdigställt all API för users samt log in/out och register funktionen.
 
+---
+
 ### Fredag 9/5
 
 Vi börjar med att skapa prototyper i Figma och färdigställer det under dagen, samt kollar igenom Vue materialet.
+
+---
 
 ### Måndag 12/5
 
@@ -40,8 +44,12 @@ Vi har installerat Vue och påbörjat hemisdan för klienten.
 - Elin: Installerat Vue med gruppen, skapat Interface IBook, fixat endpoint för att hämta bok med alla reviews, lagt till endpoints på vissa tokens.
 - Alicia: Skapat och påbörjat sidan för att visa enskild bok och dess innehåll. Uppdaterat alla reviews så att de blivit synliga under respektive book.
 
+---
+
 ### Tisdag 13/5
 
 - Sarah:
 - Elin:
 - Alicia: Arbetat med samma som igår, lagt till style och ??
+
+---
