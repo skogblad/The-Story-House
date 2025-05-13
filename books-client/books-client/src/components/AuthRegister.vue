@@ -1,7 +1,12 @@
 <script setup>
 
-  import { reactive } from 'vue';
+import { reactive } from 'vue';
 import { useRouter } from 'vue-router';
+import { ref } from 'vue'
+
+
+const registered = ref(false)
+registered.value = true
 
   const API_URL = import.meta.env.VITE_API_URL;
   const router = useRouter()
@@ -14,7 +19,6 @@ import { useRouter } from 'vue-router';
     try {
       await fetch(API_URL + '/users', {
         method: "POST",
-      credentials: 'include',
       headers: {
         "Content-Type": "application/json"
       },
@@ -24,7 +28,8 @@ import { useRouter } from 'vue-router';
       })
     });
 
-    router.push('/users');
+    alert('Registration successful!');
+  
   } catch (error) {
     console.log('Error:', error);
   }
