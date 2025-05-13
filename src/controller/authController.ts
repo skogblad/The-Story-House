@@ -22,7 +22,7 @@ export const login = async (req: Request, res: Response) => {
     res.cookie('accessToken', accessToken, {
       httpOnly: true,
       secure: true,  // true in production
-      sameSite: 'none',
+      sameSite: 'strict',
       maxAge: 1000 * 60 * 60 * 24 * 7,
     });
 
@@ -46,7 +46,7 @@ export const login = async (req: Request, res: Response) => {
     res.cookie('accessToken', accessToken, {
       httpOnly: true,
       secure: true, 
-      sameSite: 'none', 
+      sameSite: 'strict', 
       maxAge: 1000 * 60 * 60 * 24 * 7
     });
 
