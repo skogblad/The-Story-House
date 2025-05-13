@@ -31,33 +31,57 @@ Ca 22 min in i första videon från Sibar.
     const total = book.value.reviews.reduce((sum, review) => sum + (review.rating || 0), 0)
     return (total/ book.value.reviews.length).toFixed(1)
   });
+
+  function getRatingStars(rating) {
+    const fullStars = Math.floor(rating);
+    const totalStars = 5;
+
+    let html = "";
+
+    for (let i = 0; i < fullStars; i++) {
+      html += "<span>★</span>";
+    }
+    for (let i = fullStars; i < totalStars; i++) {
+      html += "<span>☆</span>";
+    }
+
+    return html;
+  }
 </script>
 
 <template>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,200,0,0&icon_names=keyboard_backspace" />
   <section>
-    <article>
-      <div>
-        <RouterLink to="/books">Back</RouterLink>
+    <article class="article">
+      <div class="link">
+        <RouterLink to="/books"><span class="material-symbols-outlined">keyboard_backspace</span>Back</RouterLink>
       </div>
-      <img src="" alt="">
+      <div v-if="book?.image">
+        <img :src="book?.image" alt="Book cover">
+      </div>
       <h2>{{ book?.title }}</h2>
-      <p>{{ book?.author }}</p>
-      <p v-if="averageRating">⭐​​⭐​​⭐​​⭐​ {{ averageRating }} </p>
+      <p class="author">{{ book?.author }}</p>
+      <p v-if="averageRating" class="average-rating">
+        <span v-html="getRatingStars(averageRating)" class="stars"></span>
+        {{ averageRating }}
+      </p>
+      <p class="rating">{{ randomRatings }} ratings - {{ book?.reviews?.length }} reviews</p>
       <button>Want to read</button>
-      <p>{{ randomRatings }} ratings - {{ book?.reviews?.length }} reviews</p>
-      <p>{{ book?.description }}</p>
-      <p>Genres: {{ book?.genres }}</p>
-      <p>First published {{ book?.published_year }}</p>
+      <p class="description">{{ book?.description }}</p>
+      <p class="genres">Genres: <span>{{ book?.genres?.join(' | ') }}</span></p>
+      <p class="published">First published {{ book?.published_year }}</p>
     </article>
   </section>
 
-  <section>
-    <h2>Rating & Reviews</h2>
-    <button><a href="">Read reviews</a></button>
-    <button><a href="">Create review</a></button>
+  <section class="rating-section">
+    <h3>Rating & Reviews</h3>
+    <div class="router-button">
+      <RouterLink :to="`/books/${route.params.id}/reviews`">Read reviews</RouterLink>
+      <RouterLink :to="`/books/${route.params.id}/createreview`">Create review</RouterLink>
+    </div>
   </section>
 </template>
 
 <style scoped>
-  
+  @import "AboutBook.scss";
 </style>
