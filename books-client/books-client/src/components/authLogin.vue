@@ -1,37 +1,20 @@
 <script lang="ts" setup>
-import { ref } from 'vue';
-import axios from 'axios';
-import { useRouter } from 'vue-router';
-
-const username = ref<string>('')
-const password = ref<string>('')
-const error = ref<string | null>(null)
-const router = useRouter()
-
-const login = async (): Promise<void> => {
-    try {
-        await axios.post('/api/login', {
-        username: username.value,
-        password: password.value,
-    }, {
-        withCredentials: true,
-    })
-    router.push('/admin')
-    }catch (err) {
-        error.value = 'Wrong user or password'
-    }
-}
 </script>
 
 <template>
- <div>
     <h1>The Story House</h1>
-  <form @submit.prevent="login">
-    <h2>Sign up for The Story House</h2>
-    <input v-model="username" placeholder="Username" />
-<input v-model="password" type="password" placeholder="Password" />
-  </form>
-  <p v-if="error">{{ error }}</p>
+    <h2>Sign in</h2>
+ <div class="container">
+    <form id="createuser">
+        <label for="">Username:</label> <br />
+        <input type="text" name="Username"> <br />
+        <label for="">Password:</label> <br />
+        <input type="text" name="Password"> <br />
+        <button>Sign in</button>
+    </form>
+     <router-link to="/signin">
+            <button type="submit">Back</button>
+        </router-link>
  </div>
 </template>
 

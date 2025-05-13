@@ -1,31 +1,49 @@
-<script lang="ts" setup>
-import { ref } from 'vue';
-import axios from 'axios';
-import { useRouter } from 'vue-router';
+<script setup>
+  import { reactive } from 'vue';
+  import { useRouter } from 'vue-router';
 
-const username = ref<string>('')
-const password = ref<string>('')
-const error = ref<string | null>(null)
-const router = useRouter()
-
-const login = async (): Promise<void> => {
+  const API_URL = import.meta.env.VITE_API_URL;
+  const router = useRouter()
+  const form = reactive({
+    content: '',
+    done: false
+  })
+  
+  const submit = async () => {
     try {
-        await axios.post('/api/login', {
-        username: username.value,
-        password: password.value,
-    }, {
-        withCredentials: true,
-    })
-    router.push('/admin')
-    }catch (err) {
-        error.value = 'Wrong user or password'
+      await fetch(API_URL + '/users', {
+        method: "POST",
+        credentials: 'include', // This enables cookie handling
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(form)
+      })
+      
+      router.push('/users')
+    } catch(error) {
+      console.log(error)
     }
-}
+  }
+
 </script>
 
+
+
 <template>
- <div>
- Hello
+    <h1>The Story House</h1>
+    <h2>Sign up for The Story House</h2>
+ <div class="container">
+    <form id="createuser" @submit.prevent="submit">
+        <label for="">Username:</label> <br />
+        <input type="text" name="Username"> <br />
+        <label for="">Password:</label> <br />
+        <input type="text" name="Password"> <br />
+        <button>Register</button>
+    </form>
+       <router-link to="/signin">
+            <button type="submit">Back</button>
+        </router-link>
  </div>
 </template>
 
