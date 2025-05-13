@@ -1,26 +1,34 @@
-<script lang="ts" setup>
-import { onMounted } from 'vue'
-import { ref } from 'vue';
+<script setup>
+  import { reactive } from 'vue';
+  import { useRouter } from 'vue-router';
 
-onMounted(() => {
-  submit()
-})
-
-const API_URL = import.meta.env.VITE_API_URL
-const users = ref([]);
-
-const submit = async () => {
+  const API_URL = import.meta.env.VITE_API_URL;
+  const router = useRouter()
+  const form = reactive({
+    content: '',
+    done: false
+  })
+  
+  const submit = async () => {
     try {
-        const response = await fetch(API_URL + 'users')
-        const data = await response.json();
-        console.log(data);
-        users.value = data;
-        }catch(error) {
-            console.log(error)
-        }
-}
+      await fetch(API_URL + '/users', {
+        method: "POST",
+        credentials: 'include', // This enables cookie handling
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(form)
+      })
+      
+      router.push('/users')
+    } catch(error) {
+      console.log(error)
+    }
+  }
 
 </script>
+
+
 
 <template>
     <h1>The Story House</h1>
