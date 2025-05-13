@@ -17,7 +17,7 @@ router.post('/logout', logout);
 router.post('/register', register);
 
 // 🔐 Protected User Routes (require token)
-router.get('/', verifyAccessToken, isAdmin, fetchAllUsers);
+router.get('/' , fetchAllUsers);
 router.get('/:id', verifyAccessToken, fetchUser);
 router.post('/', verifyAccessToken, createUser);
 router.patch('/:id', verifyAccessToken, updateUser);

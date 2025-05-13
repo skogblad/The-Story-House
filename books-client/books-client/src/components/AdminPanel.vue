@@ -1,27 +1,112 @@
 <script lang="ts" setup>
-import { onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
 
+// Reactive state for storing users
+const users = ref<any[]>([]);
 
+// Fetch users on component mount
 onMounted(async () => {
-    
-    try {
-        console.log('hej');
-        const response = await fetch('http://localhost:3000/users');
-        
-        const data = await response.json();
-        console.log(data);
-    } catch (error) {
-         console.log(error + 'Byt ut error meddelande');
- 
-    }
+  try {
+    const response = await fetch('http://localhost:3000/users');
+    const data = await response.json();
+    users.value = data; // Set fetched users to reactive state
+  } catch (error) {
+    console.log('Error fetching users', error);
+  }
 });
-
 </script>
 
 <template>
- <div>
+  <div>
     <router-link to="/signin">
-            <button type="submit">Back</button>
-        </router-link>
- </div>
+      <button type="button">Back</button>
+    </router-link>
+
+    <!-- Centered Admin Panel -->
+    <div v-if="users.length > 0" class="admin-panel-container">
+      <div class="admin-panel">
+        <h3>Users</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Username</th>
+              <th>Password</th>
+              <th>Admin</th>
+              <th>Created At</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="user in users" :key="user.id">
+              <td>{{ user.id }}</td>
+              <td>{{ user.username }}</td>
+              <td>{{ user.password }}</td>
+              <td>{{ user.is_admin ? 'Yes' : 'No' }}</td>
+              <td>{{ user.created_at }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p v-else>No users found</p>
+  </div>
 </template>
+
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Labrada:ital,wght@0,100..900;1,100..900&display=swap');
+   body {
+    font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .admin-panel-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  min-height: 100vh;       
+}
+
+    .admin-panel {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #333;
+  color: white;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+</style>
