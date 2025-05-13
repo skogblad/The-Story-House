@@ -1,30 +1,34 @@
 <script setup>
+
   import { reactive } from 'vue';
-  import { useRouter } from 'vue-router';
+import { useRouter } from 'vue-router';
 
   const API_URL = import.meta.env.VITE_API_URL;
   const router = useRouter()
   const form = reactive({
-    content: '',
-    done: false
+    username: '',
+    password: ''
   })
   
   const submit = async () => {
     try {
       await fetch(API_URL + '/users', {
         method: "POST",
-        credentials: 'include', // This enables cookie handling
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(form)
+      credentials: 'include',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        username: form.username,
+        password: form.password
       })
-      
-      router.push('/users')
-    } catch(error) {
-      console.log(error)
-    }
+    });
+
+    router.push('/users');
+  } catch (error) {
+    console.log('Error:', error);
   }
+};
 
 </script>
 
@@ -36,9 +40,10 @@
  <div class="container">
     <form id="createuser" @submit.prevent="submit">
         <label for="">Username:</label> <br />
-        <input type="text" name="Username"> <br />
+        <input v-model="form.username"> <br />
+
         <label for="">Password:</label> <br />
-        <input type="text" name="Password"> <br />
+        <input v-model="form.password"> <br />
         <button>Register</button>
     </form>
        <router-link to="/signin">
@@ -53,12 +58,6 @@
     font-family: Arial, Helvetica, sans-serif;
     }
 
-@media screen and (min-width:320px ) {
-   .nav {
-        font-size: 1rem;
-        font-weight: bold;
 
-    }
-}
 
 </style>

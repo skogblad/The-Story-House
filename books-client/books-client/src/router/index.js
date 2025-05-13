@@ -9,7 +9,8 @@ const router = createRouter({
     { path: '/signin', name: 'signin', component: () => import('@/views/SigninView.vue') },
     { path: '/AdminPanel', name: 'admin', component: () => import('@/views/AdminView.vue'), meta: { requiresAuth: true } },
     { path: '/login', name: 'login', component: () => import('@/views/LoginView.vue') },
-    { path: '/register', name: 'register', component: () => import('@/views/RegisterView.vue') }
+    { path: '/register', name: 'register', component: () => import('@/views/RegisterView.vue') },
+    { path: '/userpage', name: 'userpage', component: () => import('@/views/UserView.vue') }
   ]
 })
 

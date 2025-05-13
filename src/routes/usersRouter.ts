@@ -18,9 +18,9 @@ router.post('/register', register);
 
 // 🔐 Protected User Routes (require token)
 router.get('/' , fetchAllUsers);
-router.get('/:id', verifyAccessToken, fetchUser);
-router.post('/', verifyAccessToken, createUser);
-router.patch('/:id', verifyAccessToken, updateUser);
-router.delete('/:id', verifyAccessToken, deleteUser);
+router.get('/:id', fetchUser);
+router.post('/', createUser);
+router.patch('/:id', updateUser);
+router.delete('/:id', deleteUser);
 
 export default router;

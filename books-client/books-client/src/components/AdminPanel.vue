@@ -38,7 +38,7 @@ onMounted(async () => {
           </thead>
           <tbody>
             <tr v-for="user in users" :key="user.id">
-              <td>{{ user.id }}</td>
+              <td>{{ user._id }}</td>
               <td>{{ user.username }}</td>
               <td>{{ user.password }}</td>
               <td>{{ user.is_admin ? 'Yes' : 'No' }}</td>
@@ -54,18 +54,21 @@ onMounted(async () => {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Labrada:ital,wght@0,100..900;1,100..900&display=swap');
-   body {
-    font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .admin-panel-container {
-  display: flex;
-  justify-content: center; 
-  align-items: center;     
-  min-height: 100vh;       
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-    .admin-panel {
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.admin-panel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-panel {
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 8px;
@@ -81,7 +84,8 @@ table {
   margin-top: 20px;
 }
 
-th, td {
+th,
+td {
   padding: 10px;
   text-align: left;
   border-bottom: 1px solid #ddd;
@@ -97,7 +101,7 @@ tr:hover {
 }
 
 button {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -108,5 +112,4 @@ button {
 button:hover {
   background-color: #45a049;
 }
-
 </style>
