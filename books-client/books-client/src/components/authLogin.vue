@@ -36,9 +36,15 @@ const submit = async () => {
 };
 
 const login = () => {
-  useAuth.login();
-  alert('Sign in successful!');
-  router.push('/');
+ if (form.username === 'admin' && form.password === '123') {
+    useAuth.login(form.username);
+    alert('Sign in successful!');
+    router.push('/AdminPanel');
+  } else {
+    useAuth.login(form.username);
+    alert('Sign in successful!');
+    router.push('/');
+  }
 };
 const logout = () => {
   useAuth.logout();

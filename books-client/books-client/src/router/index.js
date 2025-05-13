@@ -29,12 +29,22 @@ const router = createRouter({
 const pinia = createPinia();
 const useAuth = useAuthStore(pinia);
 
- router.beforeEach((to, from, next) => {
+// ⛔ Protect routes (including admin-only)
+router.beforeEach((to, from, next) => {
+  const useAuth = useAuthStore();
+
+  // Block if not authenticated
   if (to.meta.requiresAuth && !useAuth.isAuthenticated) {
-     next('/auth/login');
-  } else {
-     next();
+    return next('/login');
   }
- })
+
+  // Block access to /AdminPanel if not admin
+  if (to.path === '/AdminPanel' && useAuth.username !== 'admin') {
+    return next('/'); // redirect to homepage
+  }
+
+  // Allow access
+  next();
+});
 
 export default router;
