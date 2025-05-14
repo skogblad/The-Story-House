@@ -24,23 +24,22 @@ onMounted(async () => {
     <div>
       <h1>Meet your next favorite book!</h1>
       <h2>Books</h2>
-      <section id="books" v-for="book in books" :key="book._id">
-        <article>
-          <img :src="book.image">
-          <h2>{{ book.title }}</h2>
-          <p>{{ book.author }}</p>
-          <ul>
-            <li v-for="(genre, index) in book.genres" :key="index">
-              {{ genre }}
-            </li>
-          </ul>
-          <p>{{ book.published_year }}</p>
-          
-            <a :href="`/books/${ book._id }`">View</a>
-          
-        </article>
-
-      </section>
+  <section class="books-grid">
+  <article v-for="book in books" :key="book._id">
+    <img :src="book.image" alt="Book cover" />
+    <div class="book-info">
+      <h2>{{ book.title }}</h2>
+      <p>{{ book.author }}</p>
+      <ul>
+        <li v-for="(genre, index) in book.genres" :key="index">
+          {{ genre }}
+        </li>
+      </ul>
+      <p>{{ book.published_year }}</p>
+      <a :href="`/books/${ book._id }`">Read more</a>
+    </div>
+  </article>
+</section>
     </div>
   </main>
 </template>
@@ -54,18 +53,17 @@ main {
 h1 {
   color: #588157;
   font-weight: 500;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+  font-size: 1.r8em;
+  margin-bottom: 2rem;
 }
-
 h2 {
   font-size: 1.2rem;
-  margin: 0.5rem 0;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
-#todos {
-  margin-bottom: 2rem;
+.books-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
 }
 
 article {
@@ -73,80 +71,73 @@ article {
   padding: 1rem;
   border-radius: 0.5rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 img {
-  width: 100%;
+  width: 200px;
   height: auto;
   border-radius: 0.5rem;
-  margin-bottom: 0.5rem;
 }
 
-p {
-  margin: 0.25rem 0;
+
+.book-info {
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
 }
 
 ul {
   list-style: none;
-  padding: 0;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  padding: 0;
 }
 
 ul li {
   background: #d8f3dc;
-  padding: 0.25rem 0.5rem;
+  padding: 5px;
   border-radius: 0.25rem;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 a {
   display: inline-block;
-  margin-top: 0.5rem;
-  color: white;
+  width: 100px;
+  text-align: center;
+  border-radius: 20px;
   background: #588157;
-  padding: 0.5rem 1rem;
+  color: #fff;
+  padding: 10px;
   text-decoration: none;
-  border-radius: 0.25rem;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 
 @media (min-width: 600px) {
+  .books-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   article {
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: stretch;
   }
 
   img {
-    width: 150px;
+    width: auto;
+    height: 200px;
+    
     flex-shrink: 0;
   }
 
-  article > div {
+  .book-info {
     flex: 1;
   }
 }
 
-
-@media (min-width: 900px) {
-  main {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  article {
-    padding: 1.5rem;
-  }
-}
 </style>
