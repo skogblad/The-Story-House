@@ -88,12 +88,18 @@ nav a {
   nav {
   display: flex;
   gap: 150px; 
-  margin-left: 300px;
+  margin-left: 350px;
   
 }
 nav a {
   margin-top: 18px;
   font-size: 1.3rem;
+}
+}
+@media (min-width: 1200px) {
+  nav {
+  margin-left: 500px;
+  
 }
 }
 </style>
