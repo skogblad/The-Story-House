@@ -127,7 +127,7 @@ button:active {
     margin-left: 15px;
 }
 
-@media (min-width: 720px) {
+@media (min-width: 600px) {
  h2 {
     font-size: 2rem;
     padding-top: 20px;

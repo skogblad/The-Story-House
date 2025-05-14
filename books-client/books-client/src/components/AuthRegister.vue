@@ -113,7 +113,7 @@ button:active {
   background-color: #588157;
 }
 
-@media (min-width: 720px) {
+@media (min-width: 600px) {
   .page-center {
   margin-top: 100px;
  
