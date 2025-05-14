@@ -29,7 +29,7 @@ registered.value = true
     });
 
     alert('Registration successful!');
-    router.push('/');
+    router.push('/books');
   
   } catch (error) {
     console.log('Error:', error);

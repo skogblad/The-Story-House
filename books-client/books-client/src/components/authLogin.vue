@@ -43,7 +43,7 @@ const login = () => {
   } else {
     useAuth.login(form.username);
     alert('Sign in successful!');
-    router.push('/');
+    router.push('/books');
   }
 };
 const logout = () => {

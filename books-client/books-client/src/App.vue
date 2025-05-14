@@ -7,8 +7,8 @@ import { RouterLink, RouterView } from 'vue-router'
   <header>
     <h1>The Story House</h1>
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/books">Books</RouterLink>
+        <!-- <RouterLink to="/">Home</RouterLink> -->
+        <RouterLink to="/books">Home</RouterLink>
         <RouterLink to="/signin">Sign in</RouterLink>
       </nav>
   </header>
@@ -42,8 +42,8 @@ h1 {
 
 nav {
   display: flex;
-  gap: 5px; 
-  margin-left: 10px;
+  gap: 20px; 
+  margin-left: 20px;
 }
 
 nav a {
@@ -70,7 +70,7 @@ h1 {
 nav {
   display: flex;
   gap: 50px; 
-  margin-left: 100px;
+  margin-left: 200px;
 }
 nav a {
   margin-top: 15px;
@@ -88,7 +88,7 @@ nav a {
   nav {
   display: flex;
   gap: 150px; 
-  margin-left: 180px;
+  margin-left: 300px;
   
 }
 nav a {

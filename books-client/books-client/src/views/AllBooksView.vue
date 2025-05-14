@@ -22,7 +22,8 @@ onMounted(async () => {
 <template>
   <main>
     <div>
-      <h1>Books</h1>
+      <h1>Meet your next favorite book!</h1>
+      <h2>Books</h2>
       <section id="todos" v-for="book in books" :key="book._id">
         <article>
           <img :src="book.image">
@@ -43,3 +44,11 @@ onMounted(async () => {
     </div>
   </main>
 </template>
+
+<style scoped>
+h1 {
+  color: #588157;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+}
+</style>
