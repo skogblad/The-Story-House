@@ -81,16 +81,15 @@ nav a {
 
 
 @media (min-width: 1024px) {
-  header{
-  padding: 0 100px;
-  }
+ 
   h1 {
   font-size: 2.2rem;
 }
   nav {
   display: flex;
   gap: 150px; 
-  margin-left: 500px;
+  margin-left: 180px;
+  
 }
 nav a {
   margin-top: 18px;
