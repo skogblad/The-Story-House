@@ -57,32 +57,44 @@ nav a {
   font-size: 1rem;
 }
 
+@media (min-width: 720px) {
+
+header {
+  background-color: #E9EDC9;
+  height: 60px;           
+  padding: 0 40px;
+}
+h1 {
+  font-size: 2rem;
+}
+nav {
+  display: flex;
+  gap: 50px; 
+  margin-left: 100px;
+}
+nav a {
+  margin-top: 15px;
+  font-size: 1.3rem;
+}
+}
+
 
 
 @media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+  header{
+  padding: 0 100px;
   }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
+  h1 {
+  font-size: 2.2rem;
+}
   nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+  display: flex;
+  gap: 150px; 
+  margin-left: 500px;
+}
+nav a {
+  margin-top: 18px;
+  font-size: 1.3rem;
+}
 }
 </style>
