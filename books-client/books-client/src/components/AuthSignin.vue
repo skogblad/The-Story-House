@@ -21,12 +21,12 @@ const error = ref<string | null>(null);
         <router-link to="/Register">
           <button type="submit">Register</button>
         </router-link>
-        <p>
+        <p class="terms">
           By creating an account, you agree to the The Story House Terms of
           service and Privacy Policy
         </p>
         <div class="login">
-        <router-link class="login" to="/AdminPanel">Admin</router-link>
+          <router-link class="login" to="/AdminPanel">Admin</router-link>
         </div>
       </div>
       <p class="copyright">© 2025 The Story House</p>
@@ -36,6 +36,7 @@ const error = ref<string | null>(null);
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Labrada:ital,wght@0,100..900;1,100..900&display=swap');
+
 .wrapper {
   display: flex;
   height: 100vh;
@@ -48,10 +49,10 @@ const error = ref<string | null>(null);
 }
 .container {
   background-color: #fff;
-  height: 50vh;
+  height: 70vh;
   padding: 10px;
   margin-left: 10px;
-  margin-top: 50px;
+  margin-top: 20px;
   margin-right: 20px;
   border-radius: 5px;
 }
@@ -59,7 +60,7 @@ const error = ref<string | null>(null);
 h2 {
   font-size: 1.2rem;
   text-align: center;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 p {
@@ -68,7 +69,7 @@ p {
   padding: 10px 15px;
 }
 .center {
-    text-align: center;
+  text-align: center;
 }
 
 button {
@@ -78,29 +79,76 @@ button {
   padding: 10px;
   font-size: 1rem;
   width: 120px;
-  margin-left: 120px;
+  margin-left: 90px;
 }
 
 button:hover {
   background-color: #a3b18a;
 }
 button:active {
-  background-color: #588157; 
+  background-color: #588157;
 }
 .login {
-    text-align: center;
-    text-decoration: none;
-    font-size: 1rem;
-    color: #588157;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  color: #588157;
 }
 .copyright {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.8rem;
+}
+
+@media (min-width: 720px) {
+ h2 {
+    font-size: 2rem;
+    padding-top: 20px;
+ }
+ .container {
+    height: 70vh;
+ 
+}
+p {
+  font-size: 1.2rem;
+  padding-top: 10px;
+  padding: 40px;
+}
+button {
+  background-color: #588157;
+  color: #fff;
+  border-radius: 40px;
+  padding: 10px;
+  font-size: 1.2rem;
+  width: 150px;
+  margin-left: 260px;
+}
+.copyright {
+  margin-top: 20px;
+  font-size: 1rem;
+}
+ 
+}
+
+@media (min-width: 1024px) {
+.wrapper {
+ justify-content: center;
+ align-items: center;
+ background-color: #e9edc9; ;
+}
+p {
+  font-size: 1.2rem;
+  margin-left: 20px;
+  padding: 20px;
+}
+.terms {
     text-align: center;
-    margin-top: 50px;
-    font-size: 0.8rem;
 }
-
-@media screen and(min-width:720px) {
-    
+button {  
+  margin-left: 480px;
 }
-
+.copyright {
+  font-size: 1rem;
+}
+}
 </style>
