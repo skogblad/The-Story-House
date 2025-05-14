@@ -47,5 +47,5 @@ Vi har installerat Vue och påbörjat hemisdan för klienten.
 ### Tisdag 13/5
 
 - Sarah: Färdigställt all logik och funktion för log in, logout och register, fixat klart AdminPanel med css och info. Bara CSS kvar för övriga sidor. 
-- Elin:
+- Elin: Börjat med Vue för att hämta in och visa alla böcker.
 - Alicia: Arbetat med samma som igår, lagt till style och ??
