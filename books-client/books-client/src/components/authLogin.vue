@@ -58,7 +58,6 @@ const logout = () => {
   <h2>Sign in</h2>
   <div class="container">
     <form id="createuser" @submit.prevent="submit">
-      {{ useAuth.isAuthenticated }}
       <label>Username:</label> <br />
       <input v-model="form.username" name="Username" required /> <br />
       <label>Password:</label> <br />
