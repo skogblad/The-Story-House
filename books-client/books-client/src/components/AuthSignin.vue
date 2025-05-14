@@ -35,11 +35,7 @@ const error = ref<string | null>(null);
     }
 
 @media screen and (min-width:320px ) {
-   .nav {
-        font-size: 1rem;
-        font-weight: bold;
-
-    }
+   
 }
 
 </style>
