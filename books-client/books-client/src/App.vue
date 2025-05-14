@@ -23,12 +23,11 @@ body {
     }
 
 header {
-  background-color: #E9EDC9;
-  width: 100vw;
+  background-color: #E9EDC9;  
   height: 40px;
   left: 0;
   display: flex;             
-  padding: 0 10px;
+  padding-left: 10px;
 }
 
 h1 {
@@ -62,10 +61,11 @@ nav a {
 header {
   background-color: #E9EDC9;
   height: 60px;           
-  padding: 0 40px;
+ 
 }
 h1 {
   font-size: 2rem;
+  padding-left: 20px;
 }
 nav {
   display: flex;
