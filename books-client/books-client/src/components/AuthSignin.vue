@@ -10,11 +10,10 @@ const error = ref<string | null>(null);
  <div>
     <h1>The Story House</h1>
   <div>
-    <h2>Sign up for The Story House</h2>
-    <p>Sign up to see what your friends are reading, get book 
+    <h2>Sign in for The Story House</h2>
+    <p>Sign in to see what your friends are reading, get book 
         recommendations, and join the world’s largest 
         community of readers.</p>
-    
         <router-link to="/login">
             <button type="submit">Sign in</button>
         </router-link>

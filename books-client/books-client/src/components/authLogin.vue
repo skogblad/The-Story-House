@@ -1,52 +1,74 @@
-<script lang="ts" setup>
-import { ref } from 'vue';
-import axios from 'axios';
+<script setup>
+import { reactive } from 'vue';
 import { useRouter } from 'vue-router';
+import useAuthStore from '@/stores/useAuthStore';
 
-const username = ref<string>('')
-const password = ref<string>('')
-const error = ref<string | null>(null)
-const router = useRouter()
+const API_URL = import.meta.env.VITE_API_URL;
+const router = useRouter();
 
-const login = async (): Promise<void> => {
-    try {
-        await axios.post('/api/login', {
-        username: username.value,
-        password: password.value,
-    }, {
-        withCredentials: true,
-    })
-    router.push('/admin')
-    }catch (err) {
-        error.value = 'Wrong user or password'
+const useAuth = useAuthStore();
+const form = reactive({
+  username: '',
+  password: '',
+});
+
+const submit = async () => {
+  try {
+    const response = await fetch(API_URL + '/auth/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        username: form.username,
+        password: form.password,
+      }),
+    });
+
+    if (!response.ok) {
+      alert('Login failed. Username or password is wrong.');
+      return;
     }
-}
+  } catch (error) {
+    console.log('Error:', error);
+    alert('Something went wrong. Please try again.');
+  }
+};
+
+const login = () => {
+ if (form.username === 'admin' && form.password === '123') {
+    useAuth.login(form.username);
+    alert('Sign in successful!');
+    router.push('/AdminPanel');
+  } else {
+    useAuth.login(form.username);
+    alert('Sign in successful!');
+    router.push('/');
+  }
+};
+const logout = () => {
+  useAuth.logout();
+  alert('You have been logged out.');
+  router.push('/signin');
+};
 </script>
 
 <template>
- <div>
-    <h1>The Story House</h1>
-  <form @submit.prevent="login">
-    <h2>Sign up for The Story House</h2>
-    <input v-model="username" placeholder="Username" />
-<input v-model="password" type="password" placeholder="Password" />
-  </form>
-  <p v-if="error">{{ error }}</p>
- </div>
+  <h1>The Story House</h1>
+  <h2>Sign in</h2>
+  <div class="container">
+    <form id="createuser" @submit.prevent="submit">
+      {{ useAuth.isAuthenticated }}
+      <label>Username:</label> <br />
+      <input v-model="form.username" name="Username" required /> <br />
+      <label>Password:</label> <br />
+      <input v-model="form.password" name="Password" required /> <br />
+      <button @click.prevent="login">Login</button> <br />
+      <button @click.prevent="logout">Logout</button> <br />
+    </form>
+
+    <router-link to="/signin">
+      <button type="button">Back</button>
+    </router-link>
+  </div>
 </template>
-
-<style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Labrada:ital,wght@0,100..900;1,100..900&display=swap');
-   body {
-    font-family: Arial, Helvetica, sans-serif;
-    }
-
-@media screen and (min-width:320px ) {
-   .nav {
-        font-size: 1rem;
-        font-weight: bold;
-
-    }
-}
-
-</style>
