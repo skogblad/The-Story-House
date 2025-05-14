@@ -44,12 +44,8 @@ Vi har installerat Vue och påbörjat hemisdan för klienten.
 - Elin: Installerat Vue med gruppen, skapat Interface IBook, fixat endpoint för att hämta bok med alla reviews, lagt till endpoints på vissa tokens.
 - Alicia: Skapat och påbörjat sidan för att visa enskild bok och dess innehåll. Uppdaterat alla reviews så att de blivit synliga under respektive book.
 
----
-
 ### Tisdag 13/5
 
-- Sarah:
+- Sarah: Färdigställt all logik och funktion för log in, logout och register, fixat klart AdminPanel med css och info. Bara CSS kvar för övriga sidor. 
 - Elin:
 - Alicia: Arbetat med samma som igår, lagt till style och ??
-
----
