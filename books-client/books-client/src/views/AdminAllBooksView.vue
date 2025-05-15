@@ -36,7 +36,7 @@ onMounted(async () => {
                     <td>{{ book.title }}</td>
                     <td>{{ book.author }}</td>
                     <td>
-                        <span v-for="(genre, index) in book.genres" :key="index">
+                        <span v-for="(genre, index) in book.genres.join(', ')" :key="index">
                             {{ genre }}
                         </span>
                     </td>
