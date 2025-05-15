@@ -9,8 +9,7 @@ import AddBookView from '@/views/AddBookView.vue';
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    //{ path: '/home', name: 'home', component: HomeView },
-    { path: '/books', name: 'books', component: AllBooksView },
+    { path: '/', name: 'books', component: AllBooksView },
     { path: '/all-books', name: 'All books', component: AdminAllBooksView, meta: { requiresAuth: true }  }, 
     { path: '/add-book', name: 'Add book', component: AddBookView, meta: { requiresAuth: true } },       
     { path: '/signin', name: 'signin', component: () => import('@/views/SigninView.vue') },
