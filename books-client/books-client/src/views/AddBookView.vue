@@ -53,6 +53,6 @@ const submit = async () => {
                 <button>Add book</button>
             </form>
         </div>
-        <RouterLink to="/adminbooks">Back</RouterLink>
+        <RouterLink to="/all-books">Back</RouterLink>
     </main>
 </template>
