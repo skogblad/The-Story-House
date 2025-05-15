@@ -11,3 +11,9 @@ const app = createApp(App)
 app.use(router)
 app.use(pinia)
 app.mount('#app')
+
+
+fetch("http://localhost:3000/users", {
+  method: "GET",
+  credentials: "include"
+});

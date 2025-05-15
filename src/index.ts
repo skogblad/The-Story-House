@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json()); 
 app.use(cookieParser()); // This specific middleware parses Cookies
 app.use(cors({
-  origin: "*", // This makes the Express server except request from other domains
+  origin: "http://localhost:5173", // This makes the Express server except request from other domains
   credentials: true    // Allows cookies sent to this API
 }));   
 

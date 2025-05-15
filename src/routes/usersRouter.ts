@@ -17,10 +17,10 @@ router.post('/logout', logout); //verifytoken on client webpage
 router.post('/register', register); //verifytoken on client webpage
 
 // 🔐 Protected User Routes (require token)
-router.get('/', fetchAllUsers); //verifyAccessToken as user admin password 123); 
-router.get('/:id', fetchUser); //verifyAccessToken); 
-router.post('/',createUser);  //verifyAccessToken); 
-router.patch('/:id', updateUser); //verifyAccessToken); 
-router.delete('/:id', deleteUser); //verifyAccessToken); 
+router.get('/', verifyAccessToken, fetchAllUsers);  
+router.get('/:id', verifyAccessToken, fetchUser); 
+router.post('/', verifyAccessToken, createUser);   
+router.patch('/:id',verifyAccessToken, updateUser); 
+router.delete('/:id', verifyAccessToken, deleteUser);  
 
 export default router;
