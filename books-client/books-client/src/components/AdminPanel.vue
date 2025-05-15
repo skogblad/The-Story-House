@@ -38,9 +38,15 @@ const logout = () => {
     </router-link>
     <button class="logout" @click.prevent="logout">Logout</button><br />
 
+    <div class="container">
+          <RouterLink class="button" to="/AdminPanel">Users</RouterLink>
+          <RouterLink class="button" to="/all-books">Books</RouterLink>
+          <RouterLink class="button" to="/add-book">Add Book</RouterLink>
+    </div>  
+
     <!-- Centered Admin Panel -->
     <div v-if="users.length > 0" class="admin-panel-container">
-      <div class="admin-panel">
+      <div class="admin-panel">      
         <h3>Users</h3>
         <table>
           <thead>
@@ -72,6 +78,10 @@ const logout = () => {
 @import url('https://fonts.googleapis.com/css2?family=Labrada:ital,wght@0,100..900;1,100..900&display=swap');
 body {
   font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 h3 {
@@ -116,6 +126,7 @@ tr:hover {
   background-color: #f1f1f1;
 }
 
+.button,
 .back-button {
   display: inline-flex;
   align-items: center;
@@ -130,6 +141,12 @@ tr:hover {
   font-size: 1rem;
   cursor: pointer;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.button{
+  background: #E9EDC9;
+  color: #000;
+  margin-right: 1rem;
 }
 
 .back-button::before {
