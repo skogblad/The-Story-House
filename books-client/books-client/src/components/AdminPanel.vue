@@ -33,10 +33,10 @@ const logout = () => {
 
 <template>
   <div>
-    <router-link to="/signin">
-      <button type="button">Back</button>
+    <router-link to="/signin" class="back-button">
+      Back
     </router-link>
-    <button @click.prevent="logout">Logout</button><br />
+    <button class="logout" @click.prevent="logout">Logout</button><br />
 
     <!-- Centered Admin Panel -->
     <div v-if="users.length > 0" class="admin-panel-container">
@@ -116,16 +116,38 @@ tr:hover {
   background-color: #f1f1f1;
 }
 
-button {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px 20px;
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  padding: 8px 12px;
+  background-color: #f0f0f0;
   border: none;
+  border-radius: 8px;
+  color: #588157;
+  font-weight: 500;
+  font-size: 1rem;
   cursor: pointer;
-  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-button:hover {
-  background-color: #45a049;
+.back-button::before {
+  content: '←'; /* Unicode left arrow */
+  font-size: 16px;
+}
+.logout {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  padding: 8px 12px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 8px;
+  color: #588157;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;  
 }
 </style>
