@@ -54,7 +54,7 @@ Ca 22 min in i första videon från Sibar.
   <section>
     <article class="article">
       <div class="link">
-        <RouterLink to="/books"><span class="material-symbols-outlined">keyboard_backspace</span>Back</RouterLink>
+        <RouterLink to="/"><span class="material-symbols-outlined">keyboard_backspace</span>Back</RouterLink>
       </div>
       <div v-if="book?.image">
         <img :src="book?.image" alt="Book cover">
