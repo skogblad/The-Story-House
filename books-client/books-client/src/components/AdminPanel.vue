@@ -1,9 +1,12 @@
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue';
+import useAuthStore from '@/stores/useAuthStore';
+import { reactive } from 'vue';
+import { useRouter } from 'vue-router';
 
 // Reactive state for storing users
 const users = ref<any[]>([]);
-
+const router = useRouter();
 // Fetch users on component mount
 onMounted(async () => {
   try {
@@ -14,6 +17,18 @@ onMounted(async () => {
     console.log('Error fetching users', error);
   }
 });
+
+const useAuth = useAuthStore();
+const form = reactive({
+  username: '',
+  password: '',
+});
+
+const logout = () => {
+  useAuth.logout();
+  alert('You have been logged out.');
+  router.push('/signin');
+};
 </script>
 
 <template>
@@ -21,6 +36,7 @@ onMounted(async () => {
     <router-link to="/signin">
       <button type="button">Back</button>
     </router-link>
+    <button @click.prevent="logout">Logout</button><br />
 
     <!-- Centered Admin Panel -->
     <div v-if="users.length > 0" class="admin-panel-container">
