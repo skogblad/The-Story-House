@@ -9,7 +9,7 @@ export class Review {
     this.name = name
     this.content = content
     this.rating = Number(rating)
-    this.created_at = created_at || new Date().toISOString()
+    this.created_at = created_at || new Date()
     this.books_id = books_id
   }
 }

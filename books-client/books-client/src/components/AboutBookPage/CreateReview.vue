@@ -84,13 +84,20 @@
     grid-column: span 12;
     font-size: 1.2rem;
     color: #3A5A40;
+    margin-top: 0;
   }
   
   h4 {
     grid-column: span 12;
     font-weight: 400;
     margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 20px;
+    padding-bottom: 23px;
     font-size: 1.1rem;
+    background-color: #f0f0f0;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
 
   form {
@@ -98,6 +105,10 @@
     grid-column: span 12;
     margin-bottom: 50px;
     font-size: 1rem;
+    background-color: #f0f0f0;
+    padding-bottom: 20px;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
 
   label {
