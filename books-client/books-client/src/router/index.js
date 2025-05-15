@@ -28,6 +28,7 @@ const useAuth = useAuthStore(pinia);
 // ⛔ Protect routes (including admin-only)
 router.beforeEach((to, from, next) => {
   const useAuth = useAuthStore();
+  console.log(useAuth.isAuthenticated)
 
   // Block if not authenticated
   if (to.meta.requiresAuth && !useAuth.isAuthenticated) {

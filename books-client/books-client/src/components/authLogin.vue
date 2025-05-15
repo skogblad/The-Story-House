@@ -29,6 +29,7 @@ const submit = async () => {
       alert('Login failed. Username or password is wrong.');
       return;
     }
+    router.push('/all-books')
   } catch (error) {
     console.log('Error:', error);
     alert('Something went wrong. Please try again.');
@@ -43,7 +44,7 @@ const login = () => {
   } else {
     useAuth.login(form.username);
     alert('Sign in successful!');
-    router.push('/');
+    router.push('/all-books');
   }
 };
 const logout = () => {
