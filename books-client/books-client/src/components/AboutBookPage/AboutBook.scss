@@ -124,3 +124,129 @@
   }
 }
 
+@media screen and (min-width: 767px) {
+  .article {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 15px;
+
+    .link {
+      grid-column: span 2;
+      font-size: 1rem;
+      margin-bottom: 5px;
+      margin-left: 10px;
+
+      span {
+        top: 6px;
+      }
+    }
+
+    .text-container {
+      text-align: left;
+      padding-top: 10px;
+
+      .rating {
+        font-size: 1rem;
+      }
+
+      button {
+        padding-block: 7px;
+        font-size: 1rem;
+      }
+
+      .description {
+        font-size: 1.2rem;
+        padding-inline: 0;
+        margin-right: 20px;
+      }
+
+      .genres {
+        font-size: 1rem;
+        padding-inline: 0;
+      }
+
+      .published {
+        font-size: 1rem;
+        padding-inline: 0;
+      }
+    }
+  }
+
+  .rating-section {
+    margin-top: 50px;
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    .router-button {
+      a {
+        font-size: 1rem;
+        padding-block: 7px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .article {
+
+    .link {
+      font-size: 1.2rem;
+      margin-left: 15px;
+
+      span {
+        top: 5px;
+      }
+    }
+
+    .text-container {
+      margin-top: 10px;
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      .author {
+        font-size: 1.5rem;
+      }
+
+      .average-rating {
+        font-size: 1.7rem;
+      }
+
+      .rating {
+        font-size: 1.1rem;
+      }
+
+      button {
+        font-size: 1.1rem;
+      }
+
+      .description {
+        font-size: 1.4rem;
+      }
+
+      .genres {
+        font-size: 1.1rem;
+      }
+
+      .published {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  .rating-section {
+
+    h3 {
+      font-size: 1.7rem;
+    }
+
+    .router-button {
+      a {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}

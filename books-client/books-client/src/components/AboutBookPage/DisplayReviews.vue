@@ -33,6 +33,16 @@
     
     return html;
   }
+
+  function formatDate(dateStr) {
+    const date = new Date(dateStr);
+    const day = String(date.getDate()).padStart(2, "0");
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const year = date.getFullYear();
+
+    return `${day}-${month}-${year}`;
+  }
+
 </script>
 
 <template>
@@ -45,37 +55,66 @@
         {{ review.rating }}
       </p>
       <p class="name">By: {{ review.name }}</p>
-      <p class="date">{{ review.created_at }}</p>
-      <p>{{ review.content }}</p>
+      <p class="date">{{ formatDate(review.created_at) }}</p>
+      <p class="content">{{ review.content }}</p>
     </article>
   </section>
 </template>
 
 <style scoped>
+  section {
+    margin-bottom: 80px;
+  }
+
   article {
     padding-inline: 20px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
     margin-bottom: 50px;
+    background-color: #f0f0f0;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-inline: 20px;
   }
 
   .rating {
     font-size: 1.3rem;
     font-weight: 900;
     margin-bottom: 0;
+    padding-top: 10px;
   }
 
   .name {
     font-weight: 900;
     margin-top: 5px;
+    display: flex;
+    margin-bottom: 0;
   }
 
   .date {
     color: #5C5C5C;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.9rem;
+    margin: 0;
+    position: relative;
+    top: -15px;
+    margin-right: 20px;
+  }
+
+  .content {
+    margin-top: 0;
+    padding-bottom: 20px;
   }
 
   span {
     color: #D4A373;
   }
   
+  @media screen and (min-width: 1024px) {
+    article {
+      font-size: 1.1rem;
+    }
+  }
+
 </style>
