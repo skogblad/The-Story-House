@@ -81,7 +81,9 @@ article {
 img {
   width: 200px;
   height: auto;
-  border-radius: 0.5rem;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  object-fit: cover;
 }
 
 
@@ -129,9 +131,7 @@ a {
   }
 
   img {
-    width: auto;
-    height: 200px;
-    
+    height: auto;    
     flex-shrink: 0;
   }
 
