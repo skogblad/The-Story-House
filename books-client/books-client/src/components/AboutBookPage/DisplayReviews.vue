@@ -62,6 +62,10 @@
 </template>
 
 <style scoped>
+  section {
+    margin-bottom: 80px;
+  }
+
   article {
     padding-inline: 20px;
     font-family: Arial, Helvetica, sans-serif;
