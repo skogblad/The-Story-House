@@ -63,7 +63,6 @@ const submit = async () => {
                 <input type="text" placeholder="Image url" v-model="form.image"><br>
                 <button>Add book</button>
             </form>
-            <RouterLink to="/all-books">&laquo; Back to books</RouterLink>
         </div>
         
     </main>
