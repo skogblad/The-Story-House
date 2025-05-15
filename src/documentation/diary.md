@@ -60,12 +60,16 @@ Vi har installerat Vue och påbörjat hemisdan för klienten.
 - Elin:
 - Alicia: Påbörjat skapande av create review och fått formuläret att fungera så alla nya reviews sparas och lagras under rätt bok. + styling.
 
+---
+
 ### Tordsag 15/5
 
-Elin -
-Alicia -
-Sarah - Färdigställt CSS för home page/books samt sign och register, admin delen. Justerat små buggar i koden så allt fungerar som tänkt. 
+- Elin -
+- Alicia - Gjort klart all CSS för "about book"-page, inklusive display review och create review.
+- Sarah - Färdigställt CSS för home page/books samt sign och register, admin delen. Justerat små buggar i koden så allt fungerar som tänkt.
 
-### Fredag 16/5 
+---
 
-Redovisning för klassen samt inlämning. VI mergar till main branchen från dev och ser till att allt fungerar en sista gång.
+### Fredag 16/5
+
+Redovisning för klassen samt inlämning. Vi mergar till main branchen från dev och ser till att allt fungerar en sista gång.
