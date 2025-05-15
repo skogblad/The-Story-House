@@ -36,7 +36,7 @@ onMounted(async () => {
                     <td>{{ book.title }}</td>
                     <td>{{ book.author }}</td>
                     <td>
-                        <span v-for="(genre, index) in book.genres" :key="index">
+                        <span v-for="(genre, index) in book.genres.join(', ')" :key="index">
                             {{ genre }}
                         </span>
                     </td>
@@ -51,8 +51,38 @@ onMounted(async () => {
 
 
 <style scoped>
-table, th, td {
-  border: 1px solid black;
+main{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25rem;
+}
+.container{
+    margin: 0 auto;
+    max-width: 1200px;
+}
+table{
+  width: 100%;
   border-collapse: collapse;
 }
+
+th {
+  text-align: left;
+  background-color: #E9EDC9;
+}
+
+td, th{
+    padding: 0.75rem;
+}
+tr:nth-child(even){background-color: #f6f8e9;}
+
+a{
+    margin: 1rem 0;
+    color: #3A5A40;
+    font-weight: bold;
+    display: block;
+    text-align: right;
+}
+a:hover{
+    color: #000;
+}
+
 </style>

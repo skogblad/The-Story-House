@@ -21,19 +21,25 @@ const form = reactive({
 const submit = async () => {
     try {
         
-        await fetch('http://localhost:3000/books', {
+        const response = await fetch('http://localhost:3000/books', {
             method: "POST",
             headers: {
                  "Content-Type": "application/json",
             },
-            credentials: 'include', // This enables cookie handling
+            //credentials: 'include', // This enables cookie handling
             body: JSON.stringify(form)
         });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error("Failed to add book:", response.status, errorText);
+            return;
+        }
 
         router.push('/all-books')
         
     } catch (error) {
-        console.log(error);
+        console.log("Error submitting book:", error);
     }
 }
 
@@ -52,7 +58,46 @@ const submit = async () => {
                 <input type="text" placeholder="Image url" v-model="form.image"><br>
                 <button>Add book</button>
             </form>
+            <RouterLink to="/all-books">&laquo; Back to books</RouterLink>
         </div>
-        <RouterLink to="/all-books">Back</RouterLink>
+        
     </main>
 </template>
+
+<style scoped>
+main{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25rem;
+}
+.container{
+    margin: 0 auto;
+    max-width: 800px;
+}
+input{
+    padding: 0.5rem;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+button{
+  background: #3A5A40;
+  border-radius: 1rem;
+  border: none;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  font-weight: bold;
+  margin: 1rem auto;
+  display: block;
+}
+button:hover{
+    background: #a3b18a;
+}
+a{
+    margin: 1rem 0;
+    color: #3A5A40;
+    font-weight: bold;
+    display: block;
+}
+a:hover{
+    color: #000;
+}
+</style>

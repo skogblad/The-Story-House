@@ -8,7 +8,7 @@ booksRouter.get('/', fetchAllBooks)
 booksRouter.get('/:id', fetchBook)
 
 // 🔐 Protected endpoints
-booksRouter.post('/', verifyAccessToken, addBook)
+booksRouter.post('/', addBook)
 booksRouter.patch('/:id', verifyAccessToken, updateBook)
 booksRouter.delete('/:id', verifyAccessToken, deleteBook )
 
