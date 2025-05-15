@@ -23,6 +23,8 @@ onMounted(async () => {
   <main>
     <div>
       <h1>Meet your next favorite book!</h1>
+      <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
       <h2>Books</h2>
   <section class="books-grid">
   <article v-for="book in books" :key="book._id">
@@ -53,8 +55,12 @@ main {
 h1 {
   color: #588157;
   font-weight: 500;
-  font-size: 1.r8em;
+  font-size: 1.2rem;
   margin-bottom: 2rem;
+}
+p {
+  max-width: 80vw;
+  margin-bottom: 20px;
 }
 h2 {
   font-size: 1.2rem;
@@ -81,7 +87,9 @@ article {
 img {
   width: 200px;
   height: auto;
-  border-radius: 0.5rem;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  object-fit: cover;
 }
 
 
@@ -129,14 +137,17 @@ a {
   }
 
   img {
-    width: auto;
-    height: 200px;
-    
+    height: auto;    
     flex-shrink: 0;
   }
 
   .book-info {
     flex: 1;
+  }
+}
+@media (min-width: 600px) {
+  p {
+    max-width: 50vw;
   }
 }
 

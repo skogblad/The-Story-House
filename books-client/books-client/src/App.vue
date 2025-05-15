@@ -26,8 +26,8 @@ header {
   background-color: #E9EDC9;  
   height: 40px;
   left: 0;
-  display: flex;             
-  padding-left: 10px;
+  display: flex;            
+  
 }
 
 h1 {
@@ -43,7 +43,7 @@ h1 {
 nav {
   display: flex;
   gap: 20px; 
-  margin-left: 20px;
+  margin-left: 40px;
 }
 
 nav a {
