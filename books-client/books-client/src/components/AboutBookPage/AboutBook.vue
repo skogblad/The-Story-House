@@ -59,17 +59,20 @@ Ca 22 min in i första videon från Sibar.
       <div v-if="book?.image">
         <img :src="book?.image" alt="Book cover">
       </div>
-      <h2>{{ book?.title }}</h2>
-      <p class="author">{{ book?.author }}</p>
-      <p v-if="averageRating" class="average-rating">
-        <span v-html="getRatingStars(averageRating)" class="stars"></span>
-        {{ averageRating }}
-      </p>
-      <p class="rating">{{ randomRatings }} ratings - {{ book?.reviews?.length }} reviews</p>
-      <button>Want to read</button>
-      <p class="description">{{ book?.description }}</p>
-      <p class="genres">Genres: <span>{{ book?.genres?.join(' | ') }}</span></p>
-      <p class="published">First published {{ book?.published_year }}</p>
+      <div class="text-container">
+        <h2>{{ book?.title }}</h2>
+        <p class="author">{{ book?.author }}</p>
+        <p v-if="averageRating" class="average-rating">
+          <span v-html="getRatingStars(averageRating)" class="stars"></span>
+          {{ averageRating }}
+        </p>
+        <p class="rating">{{ randomRatings }} ratings - {{ book?.reviews?.length }} reviews</p>
+        <button>Want to read</button>
+        <p class="description">{{ book?.description }}</p>
+        <p class="genres">Genres: <span>{{ book?.genres?.join(' | ') }}</span></p>
+        <p class="published">First published {{ book?.published_year }}</p>
+      </div>
+      
     </article>
   </section>
 

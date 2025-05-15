@@ -138,5 +138,36 @@
     border: solid 2px #588157;
   }
 
+  @media screen and (min-width: 767px) {
+    h4 {
+      grid-column: 2 / span 10;
+    }
+
+    form {
+      grid-column: 2 / span 10;
+    }
+    
+    .content-input {
+      padding-bottom: 70px;
+    }
+    .submit {
+      grid-column: 8 / span 1;
+      margin-right: 25px;
+    }
+
+    input {
+      padding-bottom: 5px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    p {
+      font-size: 1.3rem;
+    }   
+
+    input {
+      padding-bottom: 10px;
+    }
+  }
 
 </style>
