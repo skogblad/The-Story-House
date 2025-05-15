@@ -20,22 +20,22 @@ const form = reactive({
 
 const submit = async () => {
     try {
+        
         await fetch('http://localhost:3000/books', {
             method: "POST",
             headers: {
                  "Content-Type": "application/json",
             },
+            credentials: 'include', // This enables cookie handling
             body: JSON.stringify(form)
         });
 
-        router.push('/books')
+        router.push('/all-books')
+        
     } catch (error) {
-        console.log(error + 'Byt ut error meddelande');
+        console.log(error);
     }
 }
-
-
-
 
 </script>
 
