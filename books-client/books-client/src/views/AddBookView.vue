@@ -26,7 +26,7 @@ const submit = async () => {
             headers: {
                  "Content-Type": "application/json",
             },
-            credentials: 'include', // This enables cookie handling
+            //credentials: 'include', // This enables cookie handling
             body: JSON.stringify(form)
         });
 
