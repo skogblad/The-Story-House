@@ -4,6 +4,7 @@
   import { ref } from 'vue';
   import { useRoute, useRouter } from 'vue-router';
 
+  const API_URL = import.meta.env.VITE_API_URL
   const name = ref("");
   const rating = ref(null);
   const content = ref("");
@@ -26,7 +27,7 @@
     console.log(newReview)
 
     try {
-      const response = await fetch("http://localhost:3000/reviews", {
+      const response = await fetch(API_URL + "/reviews", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newReview),

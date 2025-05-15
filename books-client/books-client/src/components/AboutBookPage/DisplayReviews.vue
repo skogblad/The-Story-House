@@ -3,12 +3,13 @@
   import { onMounted, ref } from 'vue';
   import { useRoute } from 'vue-router';
 
+  const API_URL = import.meta.env.VITE_API_URL
   const book = ref(null);
   const route = useRoute();
 
   onMounted(async () => {
     try {
-      const response = await fetch("http://localhost:3000/books/" + route.params.id);
+      const response = await fetch(API_URL + "/books/" + route.params.id);
       const data = await response.json();
       console.log(data)
       book.value = data;
