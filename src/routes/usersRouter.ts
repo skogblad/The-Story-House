@@ -12,15 +12,15 @@ const router = express.Router()
 
 
 // 🔐 Public Auth Routes
-router.post('/login', login);
-router.post('/logout', logout);
-router.post('/register', register);
+router.post('/login', login); //verifytoken on client webpage
+router.post('/logout', logout); //verifytoken on client webpage
+router.post('/register', register); //verifytoken on client webpage
 
 // 🔐 Protected User Routes (require token)
-router.get('/' , fetchAllUsers);
-router.get('/:id', fetchUser);
-router.post('/', createUser);
-router.patch('/:id', updateUser);
+router.get('/', fetchAllUsers); //verifytoken admin on client webpage
+router.get('/:id', fetchUser); //verifytoken on client webpage
+router.post('/',createUser);  //verifytoken on client webpage
+router.patch('/:id', updateUser); 
 router.delete('/:id', deleteUser);
 
 export default router;
