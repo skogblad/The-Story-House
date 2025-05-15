@@ -21,7 +21,7 @@ Ca 22 min in i första videon från Sibar.
       randomRatings.value = Math.floor(Math.random() * (100 - 10 + 1)) + 10
 
     } catch(error) {
-      console.log(error)
+      console.error("Failed to fetch book data.", error)
     }
   })
 

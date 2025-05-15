@@ -13,7 +13,7 @@
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log("Formuläret skickas med följande data:")
+    console.log("Form is being submitted with the following data:")
 
     const newReview = new Review (
       name.value,
@@ -35,11 +35,11 @@
       if(response.ok) {
         router.push(`/books/${route.params.id}/reviews`)
       } else {
-        console.error("Fel vid skapande av recension:", response.statusText);
+        console.error("Error while creating review:", response.statusText);
       }
       
     } catch (error){
-      console.error("Kunde inte spara review:", error)
+      console.error("Failed to save review", error)
     }
   };
 </script>
