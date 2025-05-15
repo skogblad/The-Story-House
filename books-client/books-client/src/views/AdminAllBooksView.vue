@@ -12,7 +12,7 @@ onMounted(async () => {
         console.log(data);
         books.value = data;
     } catch (error) {
-        console.log(error + 'Byt ut error meddelande');
+        console.log(error);
     }
 });
 </script>

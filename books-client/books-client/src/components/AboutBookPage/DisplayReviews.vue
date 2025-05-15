@@ -14,7 +14,7 @@
       book.value = data;
 
     } catch(error) {
-      console.log(error)
+      console.log("Failed to fetch book data.", error)
     }
   })
 
