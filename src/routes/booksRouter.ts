@@ -8,8 +8,8 @@ booksRouter.get('/', fetchAllBooks)
 booksRouter.get('/:id', fetchBook)
 
 // 🔐 Protected endpoints
-booksRouter.post('/', addBook)
-booksRouter.patch('/:id', updateBook)
+booksRouter.post('/', verifyAccessToken, addBook)
+booksRouter.patch('/:id', verifyAccessToken, updateBook)
 booksRouter.delete('/:id', verifyAccessToken, deleteBook )
 
 export default booksRouter;
