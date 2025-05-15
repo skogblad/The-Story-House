@@ -1,85 +1,100 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-//import HelloWorld from './components/HelloWorld.vue'
+
 </script>
 
 <template>
   <header>
-
-    <div class="wrapper">
-      
-
-      <nav class="nav">
+    <h1>The Story House</h1>
+      <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/books">Books</RouterLink>
         <RouterLink to="/signin">Sign in</RouterLink>
       </nav>
-    </div>
   </header>
 
   <RouterView />
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Labrada:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    }
+
 header {
-  line-height: 1.5;
-  max-height: 100vh;
+  background-color: #E9EDC9;  
+  height: 40px;
+  left: 0;
+  display: flex;             
+  padding-left: 10px;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+h1 {
+  font-size: 1.2rem;
+  font-family: Labrada;
+  font-weight: 500;
+  color: #3A5A40;
+  padding: 5px;
+  display: flex;
+  margin: 0;
 }
 
 nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+  display: flex;
+  gap: 5px; 
+  margin-left: 10px;
 }
 
 nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+  padding: 5px;
+  color: #000;            
+  text-decoration: none; 
+  font-weight: bold; 
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 7px;
+  font-size: 1rem;
 }
 
-nav a:first-of-type {
-  border: 0;
+@media (min-width: 720px) {
+
+header {
+  background-color: #E9EDC9;
+  height: 60px;           
+ 
 }
+h1 {
+  font-size: 2rem;
+  padding-left: 20px;
+}
+nav {
+  display: flex;
+  gap: 50px; 
+  margin-left: 100px;
+}
+nav a {
+  margin-top: 15px;
+  font-size: 1.3rem;
+}
+}
+
+
 
 @media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+  header{
+  padding: 0 100px;
   }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
+  h1 {
+  font-size: 2.2rem;
+}
   nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+  display: flex;
+  gap: 150px; 
+  margin-left: 500px;
+}
+nav a {
+  margin-top: 18px;
+  font-size: 1.3rem;
+}
 }
 </style>
