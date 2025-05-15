@@ -1,18 +1,19 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 
+const API_URL = import.meta.env.VITE_API_URL
 let books = ref([]);
 let genres = ref([]);
 
 
 onMounted(async () => {
     try {
-        const response = await fetch('http://localhost:3000/books');
+        const response = await fetch(API_URL + '/books');
         const data = await response.json();
         console.log(data);
         books.value = data;
     } catch (error) {
-        console.log(error);
+        console.log("Error loading books:",  error);
     }
 });
 </script>
@@ -20,8 +21,12 @@ onMounted(async () => {
 <template>
   <main>
     <div class="container">
+      <div>
+          <RouterLink class="button" to="/AdminPanel">Users</RouterLink>
+          <RouterLink class="button" to="/all-books">Books</RouterLink>
+          <RouterLink class="button" to="/add-book">Add Book</RouterLink>
+      </div> 
       <h1>Books</h1>
-        <RouterLink to="/add-book">Add book</RouterLink>
         <table>
             <thead>
                 <tr>
@@ -53,11 +58,24 @@ onMounted(async () => {
 <style scoped>
 main{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.25rem;
+    font-size: 1rem;
 }
 .container{
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1000px;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 8px 12px;
+  background-color: #E9EDC9;
+  border: none;
+  border-radius: 8px;
+  color: #000;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-right: 1rem;
 }
 table{
   width: 100%;
@@ -67,6 +85,7 @@ table{
 th {
   text-align: left;
   background-color: #E9EDC9;
+  font-size: 1.25rem;
 }
 
 td, th{

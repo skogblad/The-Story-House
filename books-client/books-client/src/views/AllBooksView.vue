@@ -2,18 +2,18 @@
 
 import { onMounted, ref } from 'vue';
 
+const API_URL = import.meta.env.VITE_API_URL
 let books = ref([]);
 let genres = ref([]);
 
 onMounted(async () => {
     try {
-        const response = await fetch('http://localhost:3000/books');
+        const response = await fetch(API_URL + '/books');
         const data = await response.json();
         console.log(data);
         books.value = data;
     } catch (error) {
-         console.log(error + 'Byt ut error meddelande');
-
+         console.log("Error loading books:", error);
     }
 });
 

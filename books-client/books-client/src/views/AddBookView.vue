@@ -5,8 +5,8 @@
 import { reactive } from "vue";
 import { useRouter } from "vue-router";
 
-
 const router = useRouter();
+const API_URL = import.meta.env.VITE_API_URL
 
 const form = reactive({
     title: '',
@@ -21,7 +21,7 @@ const form = reactive({
 const submit = async () => {
     try {
         
-        const response = await fetch('http://localhost:3000/books', {
+        const response = await fetch(API_URL + '/books', {
             method: "POST",
             headers: {
                  "Content-Type": "application/json",
@@ -39,7 +39,7 @@ const submit = async () => {
         router.push('/all-books')
         
     } catch (error) {
-        console.log("Error submitting book:", error);
+        console.log("Error adding book:", error);
     }
 }
 
@@ -48,6 +48,11 @@ const submit = async () => {
 <template>
     <main>
         <div class="container">
+            <div>
+                <RouterLink class="button" to="/AdminPanel">Users</RouterLink>
+                <RouterLink class="button" to="/all-books">Books</RouterLink>
+                <RouterLink class="button" to="/add-book">Add Book</RouterLink>
+            </div>  
             <h1>Add book</h1>
             <form @submit.prevent="submit">
                 <input type="text" placeholder="Title" v-model="form.title"><br>
@@ -58,7 +63,6 @@ const submit = async () => {
                 <input type="text" placeholder="Image url" v-model="form.image"><br>
                 <button>Add book</button>
             </form>
-            <RouterLink to="/all-books">&laquo; Back to books</RouterLink>
         </div>
         
     </main>
@@ -71,13 +75,14 @@ main{
 }
 .container{
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 1000px;
 }
 input{
     padding: 0.5rem;
   width: 100%;
   margin: 0.5rem 0;
 }
+
 button{
   background: #3A5A40;
   border-radius: 1rem;
@@ -90,6 +95,19 @@ button{
 }
 button:hover{
     background: #a3b18a;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 8px 12px;
+  background-color: #E9EDC9;
+  border: none;
+  border-radius: 8px;
+  color: #000;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-right: 1rem;
 }
 a{
     margin: 1rem 0;
