@@ -29,7 +29,7 @@ registered.value = true
     });
 
     alert('Registration successful!');
-    router.push('/books');
+    router.push('/');
   
   } catch (error) {
     console.log('Error:', error);
@@ -48,7 +48,7 @@ registered.value = true
           <input v-model="form.username" name="Username" required /><br />
           <label>Password:</label><br />
           <input v-model="form.password" name="Password" required /><br />
-          <button @click.prevent="login">Register</button><br />
+          <button type="submit">Register</button><br />
         </form>
         <router-link to="/signin">
           <button type="button">Back</button>
