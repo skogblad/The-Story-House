@@ -57,14 +57,14 @@ Vi har installerat Vue och påbörjat hemisdan för klienten.
 ### Onsdag 14/5
 
 - Sarah - Jobbar med css och layouten för respektive sida, samt justerar som buggar som dykt upp i koden.
-- Elin -
+- Elin - Jobbar med sidorna för att visa alla böcker samt kunna lägga in en ny bok.
 - Alicia - Påbörjat skapande av create review och fått formuläret att fungera så alla nya reviews sparas och lagras under rätt bok. + styling.
 
 ---
 
 ### Tordsag 15/5
 
-- Elin -
+- Elin - Försökt lösa problem med att jag inte kan se mina adminsidor om verifyAccessToken står med i min booksRouter i API:et. Samt fixat CSS för bok-adminsidorna.
 - Alicia - Gjort klart all CSS för "about book"-page, inklusive display review och create review. Lite update i kod för att matcha uppdateringar från gruppen.
 - Sarah - Färdigställt CSS för home page/books samt sign och register, admin delen. Justerat små buggar i koden så allt fungerar som tänkt.
 
