@@ -19,6 +19,8 @@ const BookSchema = new Schema<IBook>({
         type:mongoose.Schema.Types.ObjectId,
         ref:"Reviews"
     }]
+}, {
+  timestamps: true
 });
 
 export default mongoose.model('Book', BookSchema);
