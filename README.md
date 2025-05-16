@@ -20,6 +20,8 @@ $ npm install
 # Run app
 $ npm run dev
 ```
+### Tables
+[Link to a folder containing collections of users, books, and reviews.](/books-api/json-collections)
 
 ## Screenshots
 
