@@ -98,7 +98,7 @@ nav a {
 }
 @media (min-width: 1200px) {
   nav {
-  margin-left: 500px;
+  margin-left: 750px;
   
 }
 }
