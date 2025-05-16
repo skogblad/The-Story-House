@@ -10,7 +10,7 @@ const router = useRouter();
 // Fetch users on component mount
 onMounted(async () => {
   try {
-    const response = await fetch('http://localhost:3000/users');
+     const response = await fetch('http://localhost:3000/users');
     const data = await response.json();
     users.value = data; // Set fetched users to reactive state
   } catch (error) {

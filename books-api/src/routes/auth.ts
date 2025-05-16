@@ -1,4 +1,5 @@
 import express from 'express';
+import { verifyAccessToken } from '../middleware/verifyToken'; 
 import { 
 login,
 logout,

@@ -44,4 +44,13 @@ router.beforeEach((to, from, next) => {
   next();
 });
 
+
+fetch('http://localhost:3000/books', {
+  method: 'GET',
+  credentials: 'include', // 🔑 viktig för att skicka cookies
+})
+fetch('http://localhost:3000/users', {
+  method: 'GET',
+  credentials: 'include', // 🔑 viktig för att skicka cookies
+})
 export default router;

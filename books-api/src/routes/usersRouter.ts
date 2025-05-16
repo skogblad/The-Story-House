@@ -17,9 +17,9 @@ router.post('/logout', logout); //verifytoken on client webpage
 router.post('/register', register); //verifytoken on client webpage
 
 // 🔐 Protected User Routes (require token)
-router.get('/', verifyAccessToken, fetchAllUsers);  
-router.get('/:id', verifyAccessToken, fetchUser); 
-router.post('/', verifyAccessToken, createUser);   
+router.get('/', fetchAllUsers);  
+router.get('/:id', fetchUser); 
+router.post('/', createUser);   
 router.patch('/:id',verifyAccessToken, updateUser); 
 router.delete('/:id', verifyAccessToken, deleteUser);  
 

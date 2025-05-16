@@ -8,7 +8,7 @@ let genres = ref([]);
 
 onMounted(async () => {
     try {
-        const response = await fetch(API_URL + '/books');
+        const response = await fetch('http://localhost:3000/books');
         const data = await response.json();
         console.log(data);
         books.value = data;

@@ -13,7 +13,7 @@ onMounted(async () => {
         console.log(data);
         books.value = data;
     } catch (error) {
-         console.log("Error loading books:", error);
+         console.log('Error:', error);
     }
 });
 
@@ -85,8 +85,8 @@ article {
 }
 
 img {
-  width: 200px;
-  height: auto;
+  width: auto;
+  height: 200px; 
   border-top-right-radius: 40px;
   border-bottom-left-radius: 40px;
   object-fit: cover;
@@ -137,7 +137,8 @@ a {
   }
 
   img {
-    height: auto;    
+    width: auto;
+    height: 200px;    
     flex-shrink: 0;
   }
 
@@ -149,6 +150,7 @@ a {
   p {
     max-width: 50vw;
   }
+
 }
 
 </style>
