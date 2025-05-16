@@ -12,12 +12,12 @@ const router = express.Router()
 
 
 // 🔐 Public Auth Routes
-router.post('/login', login); //verifytoken on client webpage
-router.post('/logout', logout); //verifytoken on client webpage
-router.post('/register', register); //verifytoken on client webpage
+router.post('/login', login); 
+router.post('/logout', logout); 
+router.post('/register', register); 
 
 // 🔐 Protected User Routes (require token)
-router.get('/', fetchAllUsers);  
+router.get('/', verifyAccessToken, isAdmin, fetchAllUsers);  
 router.get('/:id', fetchUser); 
 router.post('/', createUser);   
 router.patch('/:id',verifyAccessToken, updateUser); 

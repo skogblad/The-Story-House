@@ -12,42 +12,19 @@ const form = reactive({
   password: '',
 });
 
-const submit = async () => {
-  try {
-    const response = await fetch(API_URL + '/auth/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      credentials: 'include',
-      body: JSON.stringify({
-        username: form.username,
-        password: form.password,
-      }),
-    });
 
-    if (!response.ok) {
-      alert('Login failed. Username or password is wrong.');
-      return;
-    }
-    router.push('/all-books')
-  } catch (error) {
-    console.log('Error:', error);
-    alert('Something went wrong. Please try again.');
-  }
-};
+const login = async () => {
+  const success = await useAuth.login(form);
 
-const login = () => {
- if (form.username === 'admin' && form.password === '123') {
-    useAuth.login(form.username);
-    alert('Sign in successful!');
+  if (!success) return; // stop if login failed
+
+  if (useAuth.role === 'admin') {
     router.push('/AdminPanel');
-  } else {
-    useAuth.login(form.username);
-    alert('Sign in successful!');
+  } else if (useAuth.isAuthenticated) {
     router.push('/');
   }
 };
+
 const logout = () => {
   useAuth.logout();
   alert('You have been logged out.');
@@ -59,12 +36,12 @@ const logout = () => {
     <div class="form-wrapper">
       <h2>Sign in</h2>
       <div class="container">
-        <form id="createuser" @submit.prevent="submit">
+        <form id="createuser" @submit.prevent="login">
           <label>Username:</label><br />
           <input v-model="form.username" name="Username" required /><br />
           <label>Password:</label><br />
           <input v-model="form.password" name="Password" required /><br />
-          <button @click.prevent="login">Login</button><br />
+          <button type="submit">Login</button>
           <button @click.prevent="logout">Logout</button><br />
         </form>
         <router-link to="/signin">
