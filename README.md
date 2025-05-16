@@ -24,15 +24,18 @@ $ npm run dev
 ## Screenshots
 
 #### Front-page:
-![frontpage](/books-client/books-client/documentation/screenshots/frontpage.jpg)
+
+![front_page](/books-client/books-client/documentation/screenshots/front-page.jpg)
 
 <details>
 <summary><strong>See more</strong> <i>(2 images)</i></summary>
 
 ##### About book page:
-![about_book_page](/books-client/books-client/documentation/screenshots/about_book.jpg)
+
+![about_book_page](/books-client/books-client/documentation/screenshots/about_book_page.jpg)
 
 #### Login page:
+
 ![login_page](/books-client/books-client/documentation/screenshots/login.jpg)
 
 </details>
