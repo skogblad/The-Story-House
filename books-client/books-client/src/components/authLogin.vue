@@ -12,18 +12,54 @@ const form = reactive({
   password: '',
 });
 
+const submit = async () => {
+  try {
+    const response = await fetch(API_URL + '/auth/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+      body: JSON.stringify({
+        username: form.username,
+        password: form.password,
+      }),
+    });
 
-const login = async () => {
-  const success = await useAuth.login(form);
+    if (!response.ok) {
+      alert('Login failed. Username or password is wrong.');
+      return;
+    }
+    router.push('/all-books')
+  } catch (error) {
+    console.log('Error:', error);
+    alert('Something went wrong. Please try again.');
+  }
+};
 
-  if (!success) return; // stop if login failed
-
-  if (useAuth.role === 'admin') {
+const login = () => {
+ if (form.username === 'admin' && form.password === '123') {
+    useAuth.login(form.username);
+    alert('Sign in successful!');
     router.push('/AdminPanel');
-  } else if (useAuth.isAuthenticated) {
+  } else {
+    useAuth.login(form.username);
+    alert('Sign in successful!');
     router.push('/');
   }
 };
+
+// const login = async () => {
+//   const success = await useAuth.login(form);
+
+//   if (!success) return; // stop if login failed
+
+//   if (useAuth.role === 'admin') {
+//     router.push('/AdminPanel');
+//   } else if (useAuth.isAuthenticated) {
+//     router.push('/');
+//   }
+// };
 
 const logout = () => {
   useAuth.logout();
