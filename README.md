@@ -2,8 +2,6 @@
 
 The Story House is a simple web application where users can browse a list of books, view details and reviews, and add their own reviews. Logged-in users can also add new books to the collection. All book data is fetched from a custom-built API connected to a MongoDB database.
 
-[Link to live version](https://) _update to correct Vercel link_ <--!
-
 ## Tech Stack
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
