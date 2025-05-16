@@ -72,4 +72,4 @@ Vi har installerat Vue och påbörjat hemisdan för klienten.
 
 ### Fredag 16/5
 
-Redovisning för klassen samt inlämning. Vi mergar till main branchen från dev och ser till att allt fungerar en sista gång.
+Redovisning för klassen samt inlämning. Vi gör små justeringar, fixar Readme och livesätter med vercel samt mergar till main branchen från dev och ser till att allt fungerar en sista gång.
