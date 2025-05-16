@@ -22,6 +22,7 @@ registered.value = true
       headers: {
         "Content-Type": "application/json"
       },
+      credentials: 'include',  
       body: JSON.stringify({
         username: form.username,
         password: form.password

@@ -13,7 +13,7 @@ onMounted(async () => {
         console.log(data);
         books.value = data;
     } catch (error) {
-         console.log("Error loading books:", error);
+         console.log('Error:', error);
     }
 });
 
