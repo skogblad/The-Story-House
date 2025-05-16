@@ -1,13 +1,10 @@
-<!--
-Importera "BookReview" och "CreateReview" som två knappar längst ner, för att kunna ha 1 fil i "AboutBookView".
-Ca 22 min in i första videon från Sibar. 
--->
 <script setup>
   import { computed, onMounted, ref } from 'vue';
   import { RouterLink, useRoute } from 'vue-router';
+  import { Book } from '@/models/Book'
 
   const API_URL = import.meta.env.VITE_API_URL
-  const book = ref();
+  const book = ref(new Book());
   const route = useRoute();
   const randomRatings = ref(0);
 
@@ -17,7 +14,17 @@ Ca 22 min in i första videon från Sibar.
       const response = await fetch(API_URL + "/books/" + route.params.id);
       const data = await response.json();
       console.log(data)
-      book.value = data;
+      book.value = new Book (
+        data._id,
+        data.title,
+        data.author,
+        data.description,
+        data.genres,
+        data.createdAt,
+        data.image,
+        data.published_year,
+        data.reviews
+      );
 
       randomRatings.value = Math.floor(Math.random() * (100 - 10 + 1)) + 10
 
@@ -27,7 +34,7 @@ Ca 22 min in i första videon från Sibar.
   })
 
   const averageRating = computed(() => {
-    if (!book?.value?.reviews?.length) return null
+    if (!book.value.reviews.length) return null
 
     const total = book.value.reviews.reduce((sum, review) => sum + (review.rating || 0), 0)
     return (total/ book.value.reviews.length).toFixed(1)
@@ -61,17 +68,17 @@ Ca 22 min in i första videon från Sibar.
         <img :src="book?.image" alt="Book cover">
       </div>
       <div class="text-container">
-        <h2>{{ book?.title }}</h2>
-        <p class="author">{{ book?.author }}</p>
+        <h2>{{ book.title }}</h2>
+        <p class="author">{{ book.author }}</p>
         <p v-if="averageRating" class="average-rating">
           <span v-html="getRatingStars(averageRating)" class="stars"></span>
           {{ averageRating }}
         </p>
-        <p class="rating">{{ randomRatings }} ratings - {{ book?.reviews?.length }} reviews</p>
+        <p class="rating">{{ randomRatings }} ratings - {{ book.reviews.length }} reviews</p>
         <button>Want to read</button>
-        <p class="description">{{ book?.description }}</p>
-        <p class="genres">Genres: <span>{{ book?.genres?.join(' | ') }}</span></p>
-        <p class="published">First published {{ book?.published_year }}</p>
+        <p class="description">{{ book.description }}</p>
+        <p class="genres">Genres: <span>{{ book.genres.join(' | ') }}</span></p>
+        <p class="published">First published {{ book.published_year }}</p>
       </div>
       
     </article>
