@@ -190,7 +190,7 @@ p {
 }
 .container {
     margin-top: 0;
-    height: 75vh;
+    height: 65vh;
 }
 .copyright {
   margin-top: 10px;

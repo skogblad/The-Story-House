@@ -80,6 +80,7 @@ const logout = () => {
 @import url('https://fonts.googleapis.com/css2?family=Labrada:ital,wght@0,100..900;1,100..900&display=swap');
 .container {
   font-family: Arial, Helvetica, sans-serif;
+  
  
 }
 h2 {
