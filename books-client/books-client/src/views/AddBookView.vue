@@ -1,12 +1,18 @@
 <script setup>
 
-//const API_URL = import.meta.env.VITE_API_URL;
-
-import { reactive } from "vue";
+import { reactive, computed } from "vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
 const API_URL = import.meta.env.VITE_API_URL
+
+// Convert comma separated string to array
+const genresInput = computed({
+  get: () => form.genres.join(', '),
+  set: (value) => {
+    form.genres = value.split(',').map(g => g.trim()).filter(g => g.length > 0);
+  }
+});
 
 const form = reactive({
     title: '',
@@ -58,7 +64,8 @@ const submit = async () => {
                 <input type="text" placeholder="Title" v-model="form.title"><br>
                 <input type="text" placeholder="Description" v-model="form.description"><br>
                 <input type="text" placeholder="Author" v-model="form.author"><br>
-                <input type="text" placeholder="Genres" v-model="form.genres"><br>
+                <!--<input type="text" placeholder="Genres" v-model="form.genres"><br>-->
+                <input type="text" placeholder="Genres (comma-separated)" v-model="genresInput"><br>
                 <input type="text" placeholder="Published" v-model="form.published_year"><br>
                 <input type="text" placeholder="Image url" v-model="form.image"><br>
                 <button>Add book</button>
