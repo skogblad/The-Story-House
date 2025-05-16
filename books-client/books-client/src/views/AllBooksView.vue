@@ -138,7 +138,7 @@ a {
 
   img {
     width: auto;
-    height: 200px;    
+    height: 300px;    
     flex-shrink: 0;
   }
 
@@ -146,11 +146,6 @@ a {
     flex: 1;
   }
 }
-@media (min-width: 600px) {
-  p {
-    max-width: 50vw;
-  }
 
-}
 
 </style>
