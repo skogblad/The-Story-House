@@ -23,25 +23,24 @@ onMounted(async () => {
   <main>
     <div>
       <h1>Meet your next favorite book!</h1>
-      <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
+      <p class="hero-text">Step into a cozy corner of the internet made for book lovers. Here, you can explore a growing collection of stories, read what others think, and share your own reviews. Found a book you love? Log in and add it to the shelf so others can discover it too. The Story House is all about connecting through books — one page at a time.</p>
       <h2>Books</h2>
-  <section class="books-grid">
-  <article v-for="book in books" :key="book._id">
-    <img :src="book.image" alt="Book cover" />
-    <div class="book-info">
-      <h2>{{ book.title }}</h2>
-      <p>{{ book.author }}</p>
-      <ul>
-        <li v-for="(genre, index) in book.genres" :key="index">
-          {{ genre }}
-        </li>
-      </ul>
-      <p>{{ book.published_year }}</p>
-      <a :href="`/books/${ book._id }`">Read more</a>
-    </div>
-  </article>
-</section>
+      <section class="books-grid">
+        <article v-for="book in books" :key="book._id">
+          <img :src="book.image" alt="Book cover" />
+          <div class="book-info">
+            <h2 class="title">{{ book.title }}</h2>
+            <p class="author">{{ book.author }}</p>
+            <ul>
+              <li v-for="(genre, index) in book.genres" :key="index">
+                {{ genre }}
+              </li>
+            </ul>
+            <p class="published"><i>First published {{ book.published_year }}</i></p>
+            <a :href="`/books/${ book._id }`">Read more</a>
+          </div>
+        </article>
+      </section>
     </div>
   </main>
 </template>
@@ -58,10 +57,16 @@ h1 {
   font-size: 1.2rem;
   margin-bottom: 2rem;
 }
+
+.hero-text {
+  font-size: 1.1rem;
+}
+
 p {
   max-width: 80vw;
   margin-bottom: 20px;
 }
+
 h2 {
   font-size: 1.2rem;
 }
@@ -90,27 +95,41 @@ img {
   border-top-right-radius: 40px;
   border-bottom-left-radius: 40px;
   object-fit: cover;
+  box-shadow: 2px 3px 5px rgb(110, 110, 110);
+  
 }
 
-
 .book-info {
-   display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.25rem;
+}
+
+.title {
+  margin-bottom: 0;
+  margin-top: 25px;
+}
+
+.author {
+  font-size: 1.1rem;
 }
 
 ul {
   list-style: none;
   display: flex;
   padding: 0;
+  margin-top: 0;
 }
 
 ul li {
-  background: #d8f3dc;
+  color: #588157;
   padding: 5px;
   border-radius: 0.25rem;
   font-size: 1rem;
+}
+.published {
+  margin-top: 0;
 }
 
 a {
@@ -123,6 +142,7 @@ a {
   padding: 10px;
   text-decoration: none;
   font-size: 1rem;
+  margin-top: 40px;
 }
 
 
