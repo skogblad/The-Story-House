@@ -64,7 +64,6 @@ const submit = async () => {
                 <input type="text" placeholder="Title" v-model="form.title"><br>
                 <input type="text" placeholder="Description" v-model="form.description"><br>
                 <input type="text" placeholder="Author" v-model="form.author"><br>
-                <!--<input type="text" placeholder="Genres" v-model="form.genres"><br>-->
                 <input type="text" placeholder="Genres (comma-separated)" v-model="genresInput"><br>
                 <input type="text" placeholder="Published" v-model="form.published_year"><br>
                 <input type="text" placeholder="Image url" v-model="form.image"><br>
