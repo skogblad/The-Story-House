@@ -13,7 +13,7 @@ export class Book {
     this._id = _id
     this.title = title
     this.author = author
-    this.decription = description
+    this.description = description
     this.genres = genres
     this.published_year = Number(published_year)
     this.createdAt = createdAt || new Date()
