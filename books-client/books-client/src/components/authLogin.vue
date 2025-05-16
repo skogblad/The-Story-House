@@ -3,63 +3,30 @@ import { reactive } from 'vue';
 import { useRouter } from 'vue-router';
 import useAuthStore from '@/stores/useAuthStore';
 
-const API_URL = import.meta.env.VITE_API_URL;
 const router = useRouter();
-
 const useAuth = useAuthStore();
+
 const form = reactive({
   username: '',
   password: '',
 });
 
-const submit = async () => {
-  try {
-    const response = await fetch(API_URL + '/auth/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      credentials: 'include',
-      body: JSON.stringify({
-        username: form.username,
-        password: form.password,
-      }),
-    });
+const login = async () => {
+  const success = await useAuth.login(form.username, form.password);
 
-    if (!response.ok) {
-      alert('Login failed. Username or password is wrong.');
-      return;
-    }
-    router.push('/all-books')
-  } catch (error) {
-    console.log('Error:', error);
-    alert('Something went wrong. Please try again.');
+  if (!success) {
+    alert('Login failed. Username or password is wrong.');
+    return;
   }
-};
 
-const login = () => {
- if (form.username === 'admin' && form.password === '123') {
-    useAuth.login(form.username);
-    alert('Sign in successful!');
+  alert('Sign in successful!');
+
+  if (useAuth.role === 'admin') {
     router.push('/AdminPanel');
   } else {
-    useAuth.login(form.username);
-    alert('Sign in successful!');
     router.push('/');
   }
 };
-
-// const login = async () => {
-//   const success = await useAuth.login(form);
-
-//   if (!success) return; // stop if login failed
-
-//   if (useAuth.role === 'admin') {
-//     router.push('/AdminPanel');
-//   } else if (useAuth.isAuthenticated) {
-//     router.push('/');
-//   }
-// };
 
 const logout = () => {
   useAuth.logout();
@@ -78,7 +45,7 @@ const logout = () => {
           <label>Password:</label><br />
           <input v-model="form.password" name="Password" required /><br />
           <button type="submit">Login</button>
-          <button @click.prevent="logout">Logout</button><br />
+          <button type="button" @click="logout">Logout</button> <br />
         </form>
         <router-link to="/signin">
           <button type="button">Back</button>
