@@ -10,7 +10,7 @@ import {
 const router = express.Router()
 
 // 🔐 Protected User Routes (require token)
-router.get('/', isAdmin, fetchAllUsers);  
+router.get('/', fetchAllUsers);  
 router.get('/:id', fetchUser); 
 router.post('/', createUser);   
 router.patch('/:id',verifyAccessToken, updateUser); 

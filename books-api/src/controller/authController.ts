@@ -7,7 +7,8 @@ export const login = async (req: Request, res: Response) => {
   const { username, password } = req.body;
 
   if (!username || !password) {
-    return res.status(400).json({ message: 'Username and password are required' });
+     res.status(400).json({ message: 'Username and password are required' });
+     return;
   }
 
   // Hardcoded admin credentials
@@ -28,7 +29,8 @@ export const login = async (req: Request, res: Response) => {
       maxAge: 1000 * 60 * 60 * 24 * 7,
     });
 
-    return res.json({ message: 'Logged in as admin', isAdmin: true });
+    res.json({ message: 'Logged in as admin', isAdmin: true });
+    return;
   }
 
   // For regular users
@@ -36,7 +38,8 @@ export const login = async (req: Request, res: Response) => {
     const user = await Users.findOne({ username });
 
     if (!user || user.password !== password) {
-      return res.status(401).json({ message: 'Invalid username or password' });
+      res.status(401).json({ message: 'Invalid username or password' });
+      return;
     }
 
     const accessToken = jwt.sign(
