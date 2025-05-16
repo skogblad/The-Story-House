@@ -1,0 +1,276 @@
+[{
+  "_id": {
+    "$oid": "6821ef03008bc657940502c1"
+  },
+  "name": "Patric",
+  "content": "I’ll be honest, I didn’t understand how important the message this book tried to give when I was a kid; it bored the crap out of me and I didn’t make it to the exceptional court scene. Maybe same as the main character in this book, I didn’t truly understand the gravity of the situation yet when I was young. Now though? Let’s just say I realized why this book became one of the most highly famous and well-received classics.",
+  "rating": 4,
+  "created_at": {
+    "$date": "2025-05-12T12:52:19.721Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6821efbe008bc657940502d8"
+  },
+  "name": "Lisa",
+  "content": "This is one book that I think is more relevant today than when it was first published. I love how Scout is adamant about who she is. Others keep trying to tell her who to be, what it is to be a female. However, she wants to play, get dirty, run around with her brother. She couldn't care less about wearing dresses and sitting perfectly upright in a chair with knees pressed together in shoes you can't walk in. Incredible to imagine that this was published before the internet.",
+  "rating": 5,
+  "created_at": {
+    "$date": "2025-05-12T12:55:26.720Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6821f049008bc657940502db"
+  },
+  "name": "Cheyenne",
+  "content": "If I could give this book a zero, I would. I absolutely hated it. Generally, I don't hate books, either. Usually it's a very strong dislike, and generally, I give them a second chance. But no, I will never be reading this book again.",
+  "rating": 1,
+  "created_at": {
+    "$date": "2025-05-12T12:57:45.606Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6821f07d008bc657940502de"
+  },
+  "name": "Stephen",
+  "content": "5.0 stars. I LOVE IT when I go into a book with low expectations and it ends up knocking me on my ass. Admittedly, this is tougher to do with classics but it certainly happened in this case. I remember first reading this in school (like many of us) and not thinking it was anything special. However, having first read it almost 25 years ago, I knew I had to read it again before I could feel justified in actually reviewing it. Of course, I didn’t hold out much hope that my feelings would change and was expecting a fairly painful reading experiece.",
+  "rating": 5,
+  "created_at": {
+    "$date": "2025-05-12T12:58:37.422Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6821f0b1008bc657940502e1"
+  },
+  "name": "Nicole",
+  "content": "Hallelujah! Finished! Finally! Not that it wasn't a good book, but it was also extremely tedious at times. Melville had no grievances about doing the research and then pouring every bit of research into the novel. EVERYTHING is explained, from the 'crow's nest' to the type of rope they use on the line. This is where it gets tedious. The story, however, is fantastic and though the book is massive, the chapters are very short, making it a tad easier. So, if Melville devotes an entire chapter to the face of the whale, you can rest easy that it will only last 2-4 pages.",
+  "rating": 3,
+  "created_at": {
+    "$date": "2025-05-12T12:59:29.679Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6821f1bb008bc657940502ea"
+  },
+  "name": "Jina",
+  "content": "It was a very interesting read, but not my cup of tea. It was very well told and great developement but the characters was so one sided, it was maddening. The ideas discussed were very interesting, especially about what it means to create something, what responsibility we have toward each other, what it means to control nature and live in it.",
+  "rating": 3,
+  "created_at": {
+    "$date": "2025-05-12T13:03:55.391Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6821f21f008bc657940502ef"
+  },
+  "name": "Christopher",
+  "content": "I really disliked this book. I dislike it in the way that I dislike a great deal of modern self help books. Their basic message is that if you want something to happen, you need to want it as hard as you can, without caring about anything else, not allowing yourself to doubt it, or let criticisms will get in the way then it will happen. I disagree with this notion, not only because it is false, but because it is bad.",
+  "rating": 2,
+  "created_at": {
+    "$date": "2025-05-12T13:05:35.746Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6821f250008bc657940502f2"
+  },
+  "name": "Inge",
+  "content": "There was one thing I really liked about The Great Gatsby. It was short.",
+  "rating": 3,
+  "created_at": {
+    "$date": "2025-05-12T13:06:24.046Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6821f284008bc657940502f7"
+  },
+  "name": "John",
+  "content": "1984 is not a particularly good novel, but it is a very good essay. On the novel front, the characters are bland and you only care about them because of the awful things they live through. As a novel all the political exposition is heavyhanded, and the message completely overrides any sense of storytelling. As an essay, the points it makes can be earthshaking.",
+  "rating": 2,
+  "created_at": {
+    "$date": "2025-05-12T13:07:16.995Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6821f2ad008bc657940502fa"
+  },
+  "name": "Lily",
+  "content": "This is really the most boring book I’ve ever read. Normally I love fantasy but I hated this book so much, even though I was actually kinda excited to read it because it sounded interesting but I was disappointed with the first chapter, but I kept reading hoping it would get better but it didn’t.",
+  "rating": 1,
+  "created_at": {
+    "$date": "2025-05-12T13:07:57.713Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6821f2e2008bc657940502fd"
+  },
+  "name": "Rocco",
+  "content": "A great book for anyone of any age. However, more importantly the message of being willing to face your fears really hits home. I LOVED IT!",
+  "rating": 4,
+  "created_at": {
+    "$date": "2025-05-12T13:08:50.566Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6821f30d008bc65794050300"
+  },
+  "name": "Sean",
+  "content": "As such this is a book that can easily be skimmed over. The plot is basic and relatively unengaging and consequently I think an inattentive reader has a lot to miss here. It’s all about illusions and false appearances just like real life. The way people perceive us is not how we truly are and sometimes individuals actively work towards creating a desired appearance for the outside world. It’s easily done with enough time, effort and money. What Gatsby creates for the outside is a dream, an ideal life that looks perfect.",
+  "rating": 1,
+  "created_at": {
+    "$date": "2025-05-12T13:09:33.207Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6821f333008bc65794050303"
+  },
+  "name": "Hannah",
+  "content": "Whenever I felt lost, depressed, sad, numb, conflicted, frustrated, exhausted, I get this book into my hands and follow the journey of young shepherd Santiago who is looking for a worldly treasure. As like T.S. Eliot says: The journey not the arrival matters.",
+  "rating": 5,
+  "created_at": {
+    "$date": "2025-05-12T13:10:11.798Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6821f38e008bc65794050308"
+  },
+  "name": "Bill",
+  "content": "This book is far from perfect. Its characters lack depth, its rhetoric is sometimes didactic, its plot (well, half of it anyway) was lifted from Zumyatin’s We, and the lengthy Goldstein treatise shoved into the middle is a flaw which alters the structure of the novel like a scar disfigures a face. But in the long run, all that does not matter, because George Orwell got it right.",
+  "rating": 5,
+  "created_at": {
+    "$date": "2025-05-12T13:11:42.852Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6821f3be008bc6579405030b"
+  },
+  "name": "Emily",
+  "content": "I know this is a well loved classic and I definitely enjoyed some parts... but some times I found myself a bit bored.",
+  "rating": 3,
+  "created_at": {
+    "$date": "2025-05-12T13:12:30.514Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6821f3f0008bc6579405030e"
+  },
+  "name": "Peter",
+  "content": "18 chapters in... I want that to sink in for a moment... ok. 18 chapters in and NOTHING has happened. I am enjoying her writing style very much, but I also enjoy the back of an occasional cereal box so that may not mean much. We will see.",
+  "rating": 2,
+  "created_at": {
+    "$date": "2025-05-12T13:13:20.352Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6821f418008bc65794050311"
+  },
+  "name": "Yun",
+  "content": "I first read Brave New World many years (decades) ago in high school, and I remember thinking it was really interesting at the time. Well, I must have been a doofus back then because this reread just didn't live up to expectations. To be honest, my impression now is that it's all a bit of a mess.",
+  "rating": 3,
+  "created_at": {
+    "$date": "2025-05-12T13:14:00.096Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6821f478008bc65794050314"
+  },
+  "name": "Margaret",
+  "content": "Perfection in a book!!! One of the best stories and most wonderfully written books of all time. My favourite Jane Austen book because of this magnificent character sketch of pride and prejudice, it’s weighty themes and witty dialogue.",
+  "rating": 5,
+  "created_at": {
+    "$date": "2025-05-12T13:15:36.347Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6821f4a1008bc65794050317"
+  },
+  "name": "Chai",
+  "content": "Brave New World is the sort of book about which you have to speak for hours or hardly speak at all. It is jolting, disturbing, and fiercely dislocating. I didn’t want to read it half the time and was almost limp with relief when it was over. Yet, I suspect this is not a story one can ever completely shake loose.",
+  "rating": 5,
+  "created_at": {
+    "$date": "2025-05-12T13:16:17.525Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6821f4c9008bc6579405031a"
+  },
+  "name": "Rolls",
+  "content": "Pride and Prejudice by Jane Austen started off annoying me and ended up enchanting me. Up until about page one hundred I found this book vexing, frivolous and down right tedious. I now count myself as a convert to the Austen cult.",
+  "rating": 5,
+  "created_at": {
+    "$date": "2025-05-12T13:16:57.135Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6821f4f0008bc6579405031d"
+  },
+  "name": "Adina",
+  "content": "I finally managed to finish the dystopian classics triangle - 1984, Fahrenheit 451 and Brave new World. For me the winner is Brave New World. Although I find the world imagined is less realistic than the other two it is equally tragic.",
+  "rating": 5,
+  "created_at": {
+    "$date": "2025-05-12T13:17:36.962Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6825d47a07ff797232c6a164"
+  },
+  "name": "Sarah",
+  "content": "Wow incredible!",
+  "rating": 5,
+  "created_at": {
+    "$date": "2025-05-15T11:48:10.962Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6826f6eb63ef42fbcacbd215"
+  },
+  "name": "Sarah",
+  "content": "Wow incredible!",
+  "rating": 5,
+  "created_at": {
+    "$date": "2025-05-16T08:27:23.921Z"
+  },
+  "__v": 0
+}]

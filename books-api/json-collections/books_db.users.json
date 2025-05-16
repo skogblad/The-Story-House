@@ -1,0 +1,209 @@
+[{
+  "_id": {
+    "$oid": "681a0ccb816134a785cf29b3"
+  },
+  "username": "alice123",
+  "password": "passwordABC",
+  "is_admin": true,
+  "created_at": {
+    "$date": "2025-05-06T13:21:15.033Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "681a0d17816134a785cf29b4"
+  },
+  "username": "emma_w",
+  "password": "sunnyDay99",
+  "is_admin": false,
+  "created_at": {
+    "$date": "2025-05-06T13:22:31.240Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "681a0d17816134a785cf29b5"
+  },
+  "username": "mike_rocks",
+  "password": "qwerty123",
+  "is_admin": true,
+  "created_at": {
+    "$date": "2025-05-06T13:22:31.240Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "681a0d17816134a785cf29b6"
+  },
+  "username": "lisa_b",
+  "password": "ilovecats!",
+  "is_admin": false,
+  "created_at": {
+    "$date": "2025-05-06T13:22:31.240Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "681a0d17816134a785cf29b7"
+  },
+  "username": "tom_hardy",
+  "password": "pass2025",
+  "is_admin": false,
+  "created_at": {
+    "$date": "2025-05-06T13:22:31.240Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "681a0d17816134a785cf29b8"
+  },
+  "username": "admin_master",
+  "password": "adminOnly!",
+  "is_admin": true,
+  "created_at": {
+    "$date": "2025-05-06T13:22:31.240Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "681b4ed442e8f9a0e9ee52d2"
+  },
+  "username": "Telma Svensson",
+  "password": "12345",
+  "is_admin": false,
+  "created_at": {
+    "$date": "2025-05-07T12:15:16.957Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "681b6a0135e4e31b4dc46e69"
+  },
+  "username": "Tea Agdasson",
+  "password": "123",
+  "is_admin": false,
+  "created_at": {
+    "$date": "2025-05-07T14:11:13.459Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "681ca07403a5c5cee841db8b"
+  },
+  "username": "User32",
+  "password": "111",
+  "is_admin": false,
+  "created_at": {
+    "$date": "2025-05-08T12:15:48.397Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68233bf584fee81b1a1fcfe9"
+  },
+  "username": "Sally",
+  "password": "123",
+  "is_admin": false,
+  "created_at": {
+    "$date": "2025-05-13T12:32:53.374Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682344d74ecb1e9de67337d5"
+  },
+  "username": "Kalle",
+  "password": "456",
+  "is_admin": false,
+  "created_at": {
+    "$date": "2025-05-13T13:10:47.329Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682348b64ecb1e9de67337df"
+  },
+  "username": "Hampus",
+  "password": "123",
+  "is_admin": false,
+  "created_at": {
+    "$date": "2025-05-13T13:27:18.301Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68238e78fe9407daae5ae590"
+  },
+  "username": "Olof",
+  "password": "555",
+  "is_admin": false,
+  "created_at": {
+    "$date": "2025-05-13T18:24:56.982Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6825b5cc1070abc7070109a5"
+  },
+  "username": "Lena_PH",
+  "password": "963",
+  "is_admin": false,
+  "created_at": {
+    "$date": "2025-05-15T09:37:16.733Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6826dc0e27fdc25c477097aa"
+  },
+  "username": "Test",
+  "password": "123",
+  "is_admin": false,
+  "created_at": {
+    "$date": "2025-05-16T06:32:46.209Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6826dd6863ef42fbcacbd1e5"
+  },
+  "username": "Test",
+  "password": "123",
+  "is_admin": false,
+  "created_at": {
+    "$date": "2025-05-16T06:38:32.210Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682725d9fd4ffc2472bda64f"
+  },
+  "username": "admin",
+  "password": "123",
+  "is_admin": true,
+  "created_at": {
+    "$date": "2025-05-16T11:47:37.321Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6827332afc968a382b333b1c"
+  },
+  "username": "Test",
+  "password": "963",
+  "is_admin": false,
+  "created_at": {
+    "$date": "2025-05-16T12:44:26.553Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68273421fc968a382b333b3c"
+  },
+  "username": "admin",
+  "password": "123",
+  "is_admin": false,
+  "created_at": {
+    "$date": "2025-05-16T12:48:33.374Z"
+  }
+}]

@@ -1,0 +1,269 @@
+[{
+  "_id": {
+    "$oid": "6819feee157970b71adeb832"
+  },
+  "title": "To Kill a Mockingbird",
+  "description": "A gripping, heart-wrenching tale of racial injustice and childhood innocence in the Deep South.",
+  "author": "Harper Lee",
+  "genres": [
+    "Fiction",
+    "Classic",
+    "Historical"
+  ],
+  "image": "https://covers.openlibrary.org/b/id/8228691-L.jpg",
+  "published_year": 1960,
+  "reviews": [
+    {
+      "$oid": "6821ef03008bc657940502c1"
+    },
+    {
+      "$oid": "6821efbe008bc657940502d8"
+    },
+    {
+      "$oid": "6826f6eb63ef42fbcacbd215"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-05-16T12:02:58.730Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6819feee157970b71adeb833"
+  },
+  "title": "1984",
+  "description": "A dystopian novel exploring totalitarianism, surveillance, and individuality.",
+  "author": "George Orwell",
+  "genres": [
+    "Fiction",
+    "Dystopian",
+    "Political"
+  ],
+  "image": "https://covers.openlibrary.org/b/id/7222246-L.jpg",
+  "published_year": 1949,
+  "reviews": [
+    {
+      "$oid": "6821f284008bc657940502f7"
+    },
+    {
+      "$oid": "6821f38e008bc65794050308"
+    },
+    {
+      "$oid": "6821f3be008bc6579405030b"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-05-16T12:02:58.730Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6819feee157970b71adeb834"
+  },
+  "title": "Pride and Prejudice",
+  "description": "A classic romantic comedy that explores the nature of love, class, and family.",
+  "author": "Jane Austen",
+  "genres": [
+    "Romance",
+    "Classic",
+    "Literary"
+  ],
+  "image": "https://covers.openlibrary.org/b/id/8231856-L.jpg",
+  "published_year": 1813,
+  "reviews": [
+    {
+      "$oid": "6821f3f0008bc6579405030e"
+    },
+    {
+      "$oid": "6821f478008bc65794050314"
+    },
+    {
+      "$oid": "6821f4c9008bc6579405031a"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-05-16T12:02:58.730Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6819feee157970b71adeb835"
+  },
+  "title": "The Great Gatsby",
+  "description": "A tragic story of Jay Gatsby and the illusion of the American Dream.",
+  "author": "F. Scott Fitzgerald",
+  "genres": [
+    "Fiction",
+    "Classic",
+    "Tragedy"
+  ],
+  "image": "https://covers.openlibrary.org/b/id/7352161-L.jpg",
+  "published_year": 1925,
+  "reviews": [
+    {
+      "$oid": "6821f250008bc657940502f2"
+    },
+    {
+      "$oid": "6821f30d008bc65794050300"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-05-16T12:02:58.730Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6819feee157970b71adeb836"
+  },
+  "title": "The Catcher in the Rye",
+  "description": "A teenage boy’s cynical view of the world around him in post-war America.",
+  "author": "J.D. Salinger",
+  "genres": [
+    "Fiction",
+    "Coming-of-Age",
+    "Classic"
+  ],
+  "image": "https://covers.openlibrary.org/b/id/8225631-L.jpg",
+  "published_year": 1951,
+  "reviews": [
+    {
+      "$oid": "6821f049008bc657940502db"
+    },
+    {
+      "$oid": "6821f07d008bc657940502de"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-05-16T12:02:58.730Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6819feee157970b71adeb837"
+  },
+  "title": "The Hobbit",
+  "description": "A fantastical adventure of Bilbo Baggins as he joins a quest to reclaim a lost kingdom.",
+  "author": "J.R.R. Tolkien",
+  "genres": [
+    "Fantasy",
+    "Adventure",
+    "Classic"
+  ],
+  "image": "https://covers.openlibrary.org/b/id/6979861-L.jpg",
+  "published_year": 1937,
+  "reviews": [
+    {
+      "$oid": "6821f2ad008bc657940502fa"
+    },
+    {
+      "$oid": "6821f2e2008bc657940502fd"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-05-16T12:02:58.730Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6819feee157970b71adeb838"
+  },
+  "title": "Brave New World",
+  "description": "A chilling vision of a future society controlled by technology and conditioning.",
+  "author": "Aldous Huxley",
+  "genres": [
+    "Dystopian",
+    "Science Fiction",
+    "Philosophical"
+  ],
+  "image": "https://covers.openlibrary.org/b/id/7222276-L.jpg",
+  "published_year": 1932,
+  "reviews": [
+    {
+      "$oid": "6821f418008bc65794050311"
+    },
+    {
+      "$oid": "6821f4a1008bc65794050317"
+    },
+    {
+      "$oid": "6821f4f0008bc6579405031d"
+    },
+    {
+      "$oid": "6825d47a07ff797232c6a164"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-05-16T12:02:58.730Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6819feee157970b71adeb839"
+  },
+  "title": "Moby-Dick",
+  "description": "The obsessive quest of Captain Ahab for vengeance against the white whale.",
+  "author": "Herman Melville",
+  "genres": [
+    "Adventure",
+    "Classic",
+    "Maritime"
+  ],
+  "image": "https://covers.openlibrary.org/b/id/8100940-L.jpg",
+  "published_year": 1851,
+  "reviews": [
+    {
+      "$oid": "6821f0b1008bc657940502e1"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-05-16T12:02:58.730Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6819feee157970b71adeb83a"
+  },
+  "title": "The Alchemist",
+  "description": "A philosophical tale about pursuing one’s dreams and destiny.",
+  "author": "Paulo Coelho",
+  "genres": [
+    "Fiction",
+    "Philosophical",
+    "Adventure"
+  ],
+  "image": "https://covers.openlibrary.org/b/id/8231990-L.jpg",
+  "published_year": 1988,
+  "reviews": [
+    {
+      "$oid": "6821f21f008bc657940502ef"
+    },
+    {
+      "$oid": "6821f333008bc65794050303"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-05-16T12:02:58.730Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6819feee157970b71adeb83b"
+  },
+  "title": "Frankenstein",
+  "description": "A gothic novel exploring the boundaries of science and human ambition.",
+  "author": "Mary Shelley",
+  "genres": [
+    "Horror",
+    "Science Fiction",
+    "Classic"
+  ],
+  "image": "https://covers.openlibrary.org/b/id/8325631-L.jpg",
+  "published_year": 1818,
+  "reviews": [
+    {
+      "$oid": "6821f1bb008bc657940502ea"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-05-16T12:02:58.730Z"
+  }
+}]
