@@ -33,7 +33,7 @@ onMounted(async () => {
                     <th>Title</th>
                     <th>Author</th>
                     <th>Genres</th>
-                    <th>Published year</th>
+                    <th>Created at</th>
                 </tr>
             </thead>
             <tbody>
@@ -45,7 +45,7 @@ onMounted(async () => {
                             {{ genre }}
                         </span>
                     </td>
-                    <td>{{ book.published_year }}</td>
+                    <td>{{ book.createdAt }}</td>
                 </tr>
             </tbody>
         </table>

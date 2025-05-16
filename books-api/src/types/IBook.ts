@@ -7,5 +7,6 @@ export interface IBook {
     genres?: String[],
     image?: String,
     published_year?: Number,
-    reviews: IReview[]
+    reviews: IReview[],
+    createdAt?: Date
 }
